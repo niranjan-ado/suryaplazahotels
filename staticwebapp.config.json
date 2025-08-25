@@ -24,11 +24,6 @@
       "route": "/wp-includes/{*}",
       "redirect": "/",
       "statusCode": 301
-    },
-    {
-      "route": "/*feed*",
-      "redirect": "/",
-      "statusCode": 301
     }
   ],
   "navigationFallback": {
