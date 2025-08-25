@@ -1,0 +1,1099 @@
+/*
+ * Filename: main.css
+ * Description: Primary stylesheet for the Surya Plaza Hotel website. (v5.0 - Final with Header Fix)
+ * Sections:
+ * 1. FONT IMPORTS & GLOBAL SETUP
+ * 2. THEME DEFINITIONS (LIGHT/DARK)
+ * 3. LAYOUT, SPACING & TYPOGRAPHY SYSTEM
+ * 4. HEADER & NAVIGATION
+ * 5. PAGE SECTIONS
+ * 6. FOOTER
+ * 7. COMPONENTS
+ * 8. RESPONSIVE DESIGN
+ * 9. ANIMATIONS & KEYFRAMES
+*/
+
+/* --- 1. FONT IMPORTS & GLOBAL SETUP --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --font-primary: 'Cormorant Garamond', serif;
+    --font-secondary: 'Poppins', sans-serif;
+    
+    --header-height: 5rem;
+    --transition-smooth: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-fast: 0.2s ease-out;
+    --border-radius: 6px;
+
+    /* Spacing System */
+    --space-xs: 0.5rem;
+    --space-s: 1rem;
+    --space-m: 2rem;
+    --space-l: 4rem;
+    --space-xl: 6rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- 2. THEME DEFINITIONS (LIGHT/DARK) --- */
+:root {
+    --color-text: #222222;
+    --color-text-secondary: #555555;
+    --color-background: #ffffff;
+    --color-surface: #f8f8f8;
+    --color-border: #eAEAEA;
+    --color-primary: #8a7458;
+    --color-primary-hover: #74604a;
+    --color-header-bg: rgba(255, 255, 255, 0.65);
+    --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='dark'] {
+    --color-text: #f0f0f0;
+    --color-text-secondary: #aaaaaa;
+    --color-background: #181818;
+    --color-surface: #222222;
+    --color-border: #333333;
+    --color-primary: #b29a74;
+    --color-primary-hover: #c4ae8f;
+    --color-header-bg: rgba(24, 24, 24, 0.65);
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* --- 3. LAYOUT, SPACING & TYPOGRAPHY SYSTEM --- */
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: background-color var(--transition-smooth), color var(--transition-smooth);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-m); }
+section { padding: var(--space-xl) 0; overflow-x: hidden; }
+.section-title { text-align: center; margin-bottom: var(--space-l); }
+.section-title h2 { font-family: var(--font-primary); font-size: clamp(2.2rem, 5vw, 2.8rem); font-weight: 600; margin-bottom: var(--space-xs); }
+.section-title p { font-size: clamp(1rem, 2.5vw, 1.1rem); color: var(--color-text-secondary); max-width: 600px; margin: 0 auto; }
+.section-cta { text-align: center; margin-top: var(--space-l); }
+
+/* --- 4. HEADER & NAVIGATION --- */
+.main-header { position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height); z-index: 1000; transition: background-color var(--transition-smooth), box-shadow var(--transition-smooth); }
+.main-header.scrolled { background-color: var(--color-header-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border); }
+.header-container { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-m); display: flex; justify-content: space-between; align-items: center; height: 100%; }
+.logo a { font-family: var(--font-primary); font-size: 1.5rem; font-weight: 600; color: var(--color-text); text-decoration: none; letter-spacing: 1px; }
+.main-nav { display: block; }
+.main-nav ul { list-style: none; display: flex; align-items: center; gap: 2.5rem; }
+.main-nav a { color: var(--color-text); font-size: 0.9rem; font-weight: 400; position: relative; padding-bottom: 0.25rem; }
+.main-nav a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background-color: var(--color-primary); transform: scaleX(0); transform-origin: right; transition: transform var(--transition-smooth); }
+.main-nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+.header-controls { display: flex; align-items: center; gap: 1.5rem; }
+.theme-switcher button { background: none; border: none; cursor: pointer; color: var(--color-text); width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; transition: transform var(--transition-smooth); }
+.theme-switcher button:hover { transform: scale(1.1); } .theme-switcher svg { width: 100%; height: 100%; } .moon-icon { display: none; } html[data-theme='dark'] .moon-icon { display: block; } html[data-theme='dark'] .sun-icon { display: none; } .hamburger-btn { display: none; }
+
+/* --- 5. PAGE SECTIONS --- */
+
+/* Hero & General Background Image Styling */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    text-align: center;
+    color: white;
+    /* *** FIX: Added padding-top to prevent content from sliding under the fixed header *** */
+    padding-top: var(--header-height);
+    box-sizing: border-box;
+}
+.hero.hero-short {
+    height: 50vh;
+    min-height: 400px;
+}
+.hero-background, .section-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+.hero-background img, .section-background img { width: 100%; height: 100%; object-fit: cover; }
+.hero-overlay, .section-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+.hero-content { position: relative; max-width: 800px; padding: 0 var(--space-m); margin: auto;}
+.hero-content h1 { font-family: var(--font-primary); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 600; color: white; margin-bottom: 1rem; }
+.hero-content p { font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 300; }
+
+/* Our Story Section */
+.story-section { background-color: var(--color-surface); }
+.story-container { display: flex; align-items: center; gap: var(--space-l); }
+.story-image { flex: 1 1 45%; }
+.story-image img { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--border-radius); }
+.story-content { flex: 1 1 55%; text-align: left; }
+.story-content.section-title { margin-bottom: 0; } .story-content h2 { text-align: left; }
+.story-content p { margin: 0 auto var(--space-m) 0; }
+.story-content .section-cta { text-align: left; margin-top: 0; }
+
+/* Accommodations Section (Homepage) */
+.accommodations-section { background-color: var(--color-background); }
+.accommodations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--space-m); }
+.room-card { background-color: var(--color-surface); border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 5px 15px var(--shadow-color); transition: transform var(--transition-smooth), box-shadow var(--transition-smooth); }
+.room-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px var(--shadow-color); }
+.room-card picture, .room-card img { display: block; width: 100%; }
+.room-card img { aspect-ratio: 4 / 3; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+.room-card:hover img { transform: scale(1.05); }
+.room-card-content { padding: var(--space-m); }
+.room-card-content h3 { font-family: var(--font-primary); font-size: 1.5rem; font-weight: 600; }
+.room-card-description { font-size: 0.95rem; color: var(--color-text-secondary); margin: var(--space-xs) 0 var(--space-s) 0; }
+.room-card-price { color: var(--color-text-secondary); font-size: 0.9rem; }
+.room-card-price strong { color: var(--color-primary); font-weight: 500; font-size: 1rem; }
+
+/* Room Listing Section (Rooms Page) */
+.room-listing-section { background-color: var(--color-background); }
+.room-detail-card { display: flex; align-items: stretch; background-color: var(--color-surface); border-radius: var(--border-radius); overflow: hidden; margin-bottom: var(--space-l); }
+.room-detail-card.reverse { flex-direction: row-reverse; }
+.room-detail-gallery { flex: 1 1 55%; display: flex; flex-direction: column; }
+.gallery-main-image { width: 100%; aspect-ratio: 16 / 10; overflow: hidden; }
+.gallery-main-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-smooth), opacity 0.3s ease-in-out; }
+.gallery-thumbnails { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.thumbnail-item { aspect-ratio: 16 / 10; overflow: hidden; cursor: pointer; position: relative; }
+.thumbnail-item::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--color-primary); opacity: 0.5; transition: opacity var(--transition-fast); }
+.thumbnail-item.active::after, .thumbnail-item:hover::after { opacity: 0; }
+.thumbnail-item img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-fast); }
+.thumbnail-item:hover img { transform: scale(1.1); }
+.room-detail-content { flex: 1 1 45%; padding: var(--space-l); display: flex; flex-direction: column; justify-content: center; }
+.room-detail-content h2 { font-family: var(--font-primary); font-size: 2.2rem; }
+.room-detail-content p { color: var(--color-text-secondary); margin: var(--space-s) 0 var(--space-m) 0; }
+.amenities-list { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-s); margin-bottom: var(--space-m); }
+.amenities-list li { background-color: var(--color-background); border: 1px solid var(--color-border); padding: var(--space-xs) var(--space-s); border-radius: 50px; font-size: 0.85rem; }
+.room-pricing { margin-bottom: var(--space-m); font-size: 1.1rem; }
+.room-pricing strong { color: var(--color-primary); font-weight: 600; }
+
+/* Dining Section */
+.dining-section { position: relative; color: white; background-attachment: fixed; }
+.dining-section .section-content { position: relative; z-index: 2; }
+.light-text { color: #ffffff !important; } .dining-section .section-title p { color: rgba(255,255,255,0.8) !important; }
+.dining-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-m); text-align: center; }
+.dining-item { border: 1px solid rgba(255,255,255,0.2); padding: var(--space-m); border-radius: var(--border-radius); background-color: rgba(0,0,0,0.2); backdrop-filter: blur(5px); }
+.dining-item h3 { color: white; } .dining-item p { color: rgba(255,255,255,0.8); font-size: 0.95rem; }
+
+/* Events Section */
+.events-section { background-color: var(--color-surface); text-align: center; }
+.events-image-placeholder { max-width: 900px; margin: 0 auto; }
+.events-image-placeholder img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--border-radius); }
+
+/* Attractions Section */
+.attractions-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-m); }
+.attraction-card { position: relative; overflow: hidden; border-radius: var(--border-radius); aspect-ratio: 4 / 5; }
+.attraction-card::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 50%); transition: background var(--transition-smooth); }
+.attraction-card:hover::after { background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, transparent 60%); }
+.attraction-card img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-smooth); }
+.attraction-card:hover img { transform: scale(1.1); }
+.attraction-card h3 { position: absolute; bottom: var(--space-m); left: var(--space-m); color: white; z-index: 2; font-family: var(--font-primary); font-size: 1.8rem; transform: translateY(10px); opacity: 0.8; transition: transform var(--transition-smooth), opacity var(--transition-smooth); }
+.attraction-card:hover h3 { transform: translateY(0); opacity: 1; }
+
+/* --- 6. FOOTER --- */
+.main-footer { background-color: var(--color-surface); color: var(--color-text-secondary); padding-top: var(--space-l); font-size: 0.9rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-m); padding-bottom: 3rem; }
+.footer-column h4 { color: var(--color-text); font-size: 1rem; margin-bottom: 1rem; font-weight: 500; }
+.footer-column ul { list-style: none; line-height: 2; }
+.footer-column a { color: var(--color-text-secondary); text-decoration: none; }
+.footer-column a:hover { color: var(--color-primary); }
+.footer-column strong { color: var(--color-text); font-weight: 500; display: block; margin-bottom: 0.25rem; }
+#footer-about p { line-height: 1.8; }
+.footer-bottom { border-top: 1px solid var(--color-border); padding: 1.5rem 0; text-align: center; font-size: 0.85rem; }
+
+/* --- 7. COMPONENTS --- */
+.btn-primary, .btn-secondary { display: inline-block; padding: 0.85rem 2rem; border-radius: 50px; font-size: 0.9rem; font-weight: 500; text-decoration: none; transition: all var(--transition-fast); border: 1px solid transparent; }
+.btn-primary { background-color: var(--color-primary); color: var(--color-background); }
+.btn-primary:hover { background-color: var(--color-primary-hover); transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+.btn-secondary { background-color: transparent; color: var(--color-text); border-color: var(--color-border); }
+.btn-secondary:hover { background-color: var(--color-text); color: var(--color-background); border-color: var(--color-text); }
+:is(.btn-primary, .btn-secondary):focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+
+/* --- 8. RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    .story-container { flex-direction: column; }
+    .story-image { max-width: 500px; width: 100%; }
+    .story-content, .story-content h2 { text-align: center; }
+    .story-content p { margin: 0 auto var(--space-m); }
+    .story-content .section-cta { text-align: center; }
+    .attractions-grid { grid-template-columns: 1fr; }
+    .room-detail-card, .room-detail-card.reverse { flex-direction: column; }
+    .room-detail-card.reverse .room-detail-gallery { order: 0; }
+    .room-detail-card.reverse .room-detail-content { order: 0; }
+    .room-detail-content { padding: var(--space-m); }
+}
+
+@media (max-width: 768px) {
+    .header-controls .btn-primary { display: none; }
+    .accommodations-grid { grid-template-columns: 1fr; }
+    .main-nav { position: fixed; top: 0; right: 0; width: 80%; max-width: 320px; height: 100vh; background-color: var(--color-background); justify-content: center; align-items: center; display: flex; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); box-shadow: -5px 0 15px rgba(0,0,0,0.1); border-left: 1px solid var(--color-border); }
+    .main-nav.active { transform: translateX(0); }
+    .main-nav ul { flex-direction: column; gap: 2.5rem; align-items: center; font-size: 1.2rem; }
+    .hamburger-btn { display: flex; flex-direction: column; justify-content: space-around; width: 1.75rem; height: 1.25rem; background: transparent; border: none; cursor: pointer; z-index: 10; }
+    .hamburger-btn span { width: 100%; height: 2px; background-color: var(--color-text); border-radius: 10px; transition: all 0.3s ease-in-out; transform-origin: center; }
+    .hamburger-btn.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger-btn.active span:nth-child(2) { opacity: 0; }
+    .hamburger-btn.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+/* --- 9. ANIMATIONS & KEYFRAMES --- */
+.section-title, .story-content, .room-card, .dining-item, .events-image-placeholder, .attraction-card, .room-detail-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.section-title.is-visible, .story-content.is-visible, .room-card.is-visible, .dining-item.is-visible, .attraction-card.is-visible, .room-detail-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.events-image-placeholder {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease-out;
+}
+.events-image-placeholder.is-visible {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+}
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.hero-content h1 { animation: fadeInUp 1s 0.2s both; }
+.hero-content p { animation: fadeInUp 1s 0.4s both; }
+
+/* --- Events Page Specific Styles --- */
+
+/* Main two-column layout for description and form */
+.event-details-container {
+    display: flex;
+    align-items: flex-start; /* Aligns items to the top */
+    gap: var(--space-l);
+}
+
+.event-description {
+    flex: 2; /* Takes up 2/3 of the space */
+}
+
+.event-description h2 {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    margin-bottom: var(--space-s);
+}
+
+.key-features {
+    margin-top: var(--space-m);
+    padding-top: var(--space-m);
+    border-top: 1px solid var(--color-border);
+}
+
+.key-features ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.key-features li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: var(--space-s);
+}
+
+/* Custom checkmark for list items for a premium feel */
+.key-features li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+}
+
+/* Booking form card styles */
+.booking-form-card {
+    flex: 1; /* Takes up 1/3 of the space */
+    background-color: var(--color-surface);
+    padding: var(--space-l);
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 25px var(--shadow-color);
+    position: sticky; /* Form stays in view on scroll */
+    top: calc(var(--header-height) + var(--space-m));
+}
+
+.booking-form-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.booking-form-card p {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-m);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text-secondary);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+    transition: border-color var(--transition-fast);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.btn-primary.full-width {
+    width: 100%;
+    margin-top: var(--space-s);
+}
+
+/* Venue Gallery Styles */
+.venue-gallery-section {
+    background-color: var(--color-surface);
+}
+
+.venue-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-m);
+}
+
+.venue-gallery-item {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    aspect-ratio: 16 / 10;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.venue-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-smooth);
+}
+
+.venue-gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments for the events page */
+@media (max-width: 992px) {
+    .event-details-container {
+        flex-direction: column;
+    }
+    .booking-form-card {
+        position: static; /* Unstick the form on smaller screens */
+        width: 100%;
+    }
+}
+
+/* --- Dining Page Specific Styles --- */
+
+.dining-details-container {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-l);
+}
+
+.dining-options-list {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+}
+
+.dining-option-card {
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.dining-option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+.dining-option-image img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.dining-option-content {
+    padding: var(--space-m);
+}
+
+.dining-option-content h2 {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    margin-bottom: var(--space-xs);
+}
+
+.dining-option-content p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-m);
+}
+
+/* Responsive adjustments for the dining page */
+@media (max-width: 992px) {
+    .dining-details-container {
+        flex-direction: column;
+    }
+}
+
+/* --- Moti Mahal Page Specific Styles --- */
+
+.restaurant-intro-section {
+    background-color: var(--color-background);
+}
+
+.key-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-m);
+    margin-top: var(--space-l);
+}
+
+.feature-card {
+    background-color: var(--color-surface);
+    padding: var(--space-m);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+.feature-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-s);
+}
+
+.feature-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Parallax Section */
+.parallax-section {
+    min-height: 400px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 0; /* Override default section padding */
+}
+
+/* Top Dishes Section */
+.top-dishes-section {
+    background-color: var(--color-surface);
+}
+
+.top-dishes-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.dish-item {
+    padding: var(--space-m) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.dish-item:first-child {
+    padding-top: 0;
+}
+
+.dish-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.dish-item h3 {
+    font-family: var(--font-primary);
+    font-size: 1.6rem;
+    margin-bottom: var(--space-xs);
+}
+
+.dish-item p {
+    color: var(--color-text-secondary);
+}
+
+/* Responsive adjustments for parallax on mobile */
+@media (max-width: 992px) {
+    .parallax-section {
+        background-attachment: scroll;
+    }
+}
+
+/* --- In-Room Dining Page Specific Styles --- */
+
+.curated-menu-title {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: var(--space-m);
+    padding-bottom: var(--space-s);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* --- Contact Page Specific Styles --- */
+
+.contact-section { background-color: var(--color-background); }
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr; /* Left column slightly smaller */
+    gap: var(--space-xl, 6rem);
+}
+
+.contact-info h2 { font-family: var(--font-primary); font-size: 2.5rem; margin-bottom: 1rem; }
+.contact-intro { color: var(--color-text-secondary); margin-bottom: 2.5rem; }
+
+.contact-channels-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.channel-card {
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.channel-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px var(--shadow-color); }
+.channel-card h3 { font-size: 1.2rem; margin: 0 0 0.5rem 0; }
+.contact-link { display: block; color: var(--color-text-secondary); text-decoration: none; margin-top: 0.5rem; }
+.contact-link:hover { color: var(--color-primary); }
+
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: #25D366;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    margin-bottom: 2.5rem;
+    transition: background-color 0.2s ease;
+}
+.btn-whatsapp:hover { background-color: #1DAE54; }
+.btn-whatsapp svg { width: 1.5rem; height: 1.5rem; }
+
+.address-block { padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
+.address-block h3 { margin-bottom: 0.5rem; }
+.address-block p { color: var(--color-text-secondary); line-height: 1.8; }
+
+/* Floating Label Form Styles */
+.contact-form-wrapper { background-color: var(--color-surface); padding: var(--space-l); border-radius: var(--border-radius); }
+.contact-form-wrapper h2 { font-family: var(--font-primary); font-size: 2.5rem; margin-top: 0; }
+.contact-form-wrapper p { color: var(--color-text-secondary); margin-bottom: 2.5rem; }
+.input-group { position: relative; margin-bottom: 2rem; }
+.input-group input, .input-group textarea {
+    width: 100%; padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--border-radius);
+    background-color: var(--color-background); color: var(--color-text); font-size: 1rem;
+    font-family: var(--font-secondary); transition: border-color 0.2s ease;
+}
+.input-group textarea { resize: vertical; }
+.input-group label {
+    position: absolute; top: 1rem; left: 1rem; color: var(--color-text-secondary);
+    pointer-events: none; transition: all 0.2s ease;
+}
+.input-group input:focus, .input-group textarea:focus { outline: none; border-color: var(--color-primary); }
+.input-group input:focus + label, .input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label, .input-group textarea:not(:placeholder-shown) + label {
+    top: -0.75rem; left: 0.75rem; font-size: 0.8rem;
+    background-color: var(--color-surface); padding: 0 0.25rem;
+    color: var(--color-primary);
+}
+.checkbox-group { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem; }
+.checkbox-group label { font-size: 0.9rem; color: var(--color-text-secondary); }
+.checkbox-group a { color: var(--color-primary); }
+
+/* Submit Button Loading State */
+#submit-btn { position: relative; }
+#submit-btn .btn-loader {
+    width: 1.2rem; height: 1.2rem; border: 2px solid rgba(255,255,255,0.5);
+    border-top-color: white; border-radius: 50%;
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s linear infinite;
+    display: none;
+}
+#submit-btn.loading .btn-text { opacity: 0; }
+#submit-btn.loading .btn-loader { display: block; }
+@keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+/* How to Reach Section */
+.how-to-reach-section { background-color: var(--color-surface); }
+.how-to-reach-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-m);
+}
+.transport-card { text-align: center; }
+.transport-card h3 { font-size: 1.2rem; }
+.transport-card p { color: var(--color-text-secondary); }
+
+/* Map Section */
+.map-section { padding: 0; }
+.map-container { width: 100%; height: 500px; }
+.map-container iframe { width: 100%; height: 100%; border: 0; }
+html[data-theme='dark'] .map-container iframe { filter: invert(1) grayscale(0.8); }
+
+/* Responsive Adjustments for Contact Page */
+@media (max-width: 992px) {
+    .contact-grid { grid-template-columns: 1fr; gap: var(--space-l); }
+}
+
+/* --- About Page Specific Styles --- */
+
+.about-intro-section {
+    background-color: var(--color-background);
+}
+.about-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    gap: var(--space-l, 4rem);
+}
+.about-intro-image img {
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+.about-intro-content h2 {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    margin-top: 0;
+}
+.about-intro-content p {
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Pillars Section */
+.pillars-section {
+    background-color: var(--color-surface);
+}
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-m, 2rem);
+}
+.pillar-card {
+    text-align: center;
+    padding: var(--space-m, 2rem);
+}
+.pillar-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+.pillar-icon svg {
+    width: 28px;
+    height: 28px;
+}
+.pillar-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+}
+.pillar-card p {
+    color: var(--color-text-secondary);
+}
+
+/* Leadership Section */
+.leadership-section {
+    background-color: var(--color-background);
+}
+.leadership-card {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    align-items: center;
+    gap: var(--space-l, 4rem);
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.leadership-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.leadership-content {
+    padding: var(--space-l, 4rem);
+}
+.leadership-content blockquote {
+    border-left: 3px solid var(--color-primary);
+    padding-left: 1.5rem;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 1rem 0;
+}
+.leadership-content cite {
+    display: block;
+    margin-top: 1.5rem;
+    font-style: normal;
+}
+
+/* Responsive adjustments for About Page */
+@media (max-width: 992px) {
+    .about-intro-grid {
+        grid-template-columns: 1fr;
+    }
+    .leadership-card {
+        grid-template-columns: 1fr;
+    }
+    .leadership-content {
+        padding: var(--space-m, 2rem);
+    }
+}
+
+/* ---
+Final CTA Component Overhaul
+This block fixes centering and button spacing on all pages.
+--- */
+
+/* Base style for the section */
+.contact-cta {
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+}
+.contact-cta .container { 
+    padding: var(--space-l) var(--space-m); /* Consistent vertical padding */
+}
+.contact-cta h2, .contact-cta p {
+    color: white; /* Ensure text is always white */
+}
+
+/* Container for the buttons */
+.contact-cta .contact-methods {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows buttons to wrap onto the next line */
+    gap: 1rem;       /* Adds space between buttons horizontally AND vertically when they wrap */
+    margin-top: 2.5rem; /* THIS ADDS THE SPACE ABOVE THE BUTTONS */
+}
+
+/* Styles for the buttons within this specific section */
+.contact-cta .btn-secondary {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.7) !important;
+    background-color: transparent !important;
+}
+
+.contact-cta .btn-secondary:hover {
+    color: var(--color-primary) !important;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+/* 
+   *** FIX FOR MOBILE STACKING AND PADDING ***
+   This media query targets mobile screens and fixes the button layout.
+*/
+@media (max-width: 768px) {
+    .contact-cta .contact-methods {
+        flex-direction: column; /* Stacks the buttons vertically */
+        gap: 1.25rem;            /* Increases vertical space between stacked buttons */
+    }
+
+    .contact-cta .btn-secondary {
+        width: 100%;           /* Makes buttons take full width */
+        max-width: 350px;      /* Prevents them from being too wide on tablets */
+    }
+}
+
+/* --- Privacy Policy Page Specific Styles --- */
+.policy-section-wrapper {
+    background-color: var(--color-background);
+}
+.policy-grid {
+    display: grid;
+    grid-template-columns: 250px 1fr; /* Sidebar and main content */
+    gap: var(--space-l, 4rem);
+}
+.policy-nav {
+    position: sticky;
+    top: calc(var(--header-height, 5rem) + 2rem); /* Sticks below the main header */
+    align-self: start; /* Aligns to the top of the grid cell */
+}
+.policy-nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    border-left: 3px solid var(--color-border);
+    transition: all 0.2s ease;
+}
+.policy-nav-link:hover {
+    color: var(--color-text);
+    border-left-color: var(--color-text);
+}
+.policy-nav-link.active {
+    color: var(--color-primary);
+    border-left-color: var(--color-primary);
+    transform: translateX(5px);
+}
+.policy-section {
+    padding-top: 2rem; /* Space for anchor links to land correctly */
+    margin-bottom: 2.5rem;
+}
+.policy-section:first-child {
+    padding-top: 0;
+}
+.policy-section h2 {
+    font-family: var(--font-primary);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+.policy-section h3 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+.policy-section p, .policy-section li {
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+.policy-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+.policy-section li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+}
+.policy-section li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+}
+
+/* Responsive adjustments for Policy Page */
+@media (max-width: 992px) {
+    .policy-grid {
+        grid-template-columns: 1fr;
+    }
+    .policy-nav {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 1rem;
+    }
+    .policy-nav-link {
+        border: 1px solid var(--color-border);
+        border-radius: 50px;
+        padding: 0.5rem 1rem;
+        border-left: 1px solid var(--color-border);
+    }
+    .policy-nav-link.active {
+        border-color: var(--color-primary);
+        background-color: var(--color-primary);
+        color: white;
+        transform: none;
+    }
+}
+
+/* --- Our Team / About Page Specific Styles --- */
+.team-intro-section {
+    background-color: var(--color-background);
+}
+.team-feature-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-l, 4rem);
+    margin-bottom: var(--space-l, 4rem);
+}
+.team-feature-card:last-child {
+    margin-bottom: 0;
+}
+.team-feature-card.reverse {
+    flex-direction: row-reverse;
+}
+.team-feature-image {
+    flex: 1 1 50%;
+}
+.team-feature-image img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+.team-feature-content {
+    flex: 1 1 50%;
+}
+.team-feature-content h3 {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+}
+.team-feature-content p {
+    color: var(--color-text-secondary);
+}
+
+/* Culture Section */
+.culture-section {
+    background-color: var(--color-surface);
+}
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-m, 2rem);
+}
+.culture-card {
+    text-align: center;
+    padding: var(--space-m, 2rem);
+}
+.culture-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+.culture-icon svg {
+    width: 28px;
+    height: 28px;
+}
+.culture-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+}
+.culture-card p {
+    color: var(--color-text-secondary);
+}
+
+/* Conduct & Careers Section */
+.conduct-section {
+    background-color: var(--color-background);
+}
+.conduct-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-m, 2rem);
+}
+.conduct-card {
+    padding: var(--space-l, 4rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+.conduct-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+}
+.conduct-card p {
+    color: var(--color-text-secondary);
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive adjustments for Team Page */
+@media (max-width: 992px) {
+    .team-feature-card, .team-feature-card.reverse {
+        flex-direction: column;
+        gap: var(--space-m, 2rem);
+    }
+    .conduct-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Shipping Policy Page Specific Styles --- */
+/* This reuses the .policy-grid from the privacy page for a consistent layout */
+.policy-sidebar {
+    position: sticky;
+    top: calc(var(--header-height, 5rem) + 2rem);
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m, 2rem);
+}
+.sidebar-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: var(--space-l, 4rem);
+}
+.sidebar-card h3 {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+.sidebar-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+.sidebar-card li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+    color: var(--color-text-secondary);
+}
+.sidebar-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+}
+.sidebar-card .btn-primary.full-width {
+    width: 100%;
+}
+
+/* Responsive adjustments for Sidebar */
+@media (max-width: 992px) {
+    .policy-sidebar {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .sidebar-card {
+        flex: 1 1 300px; /* Allow cards to sit side-by-side if space allows */
+    }
+}

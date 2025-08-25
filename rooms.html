@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the range of rooms and suites at Surya Plaza Hotel, from comfortable Club Rooms to spacious Family Apartments with kitchens.">
+    
+    <title>Rooms & Suites | Surya Plaza Hotel, Sahibganj</title>
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <!-- This header is unchanged and correct. -->
+        <div class="header-container">
+            <div class="logo">
+                <a href="/">SURYA PLAZA</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/rooms.html">Rooms</a></li>
+                    <li><a href="/dining.html">Restaurants</a></li>
+                    <li><a href="/events.html">Events</a></li>
+                    <li><a href="/attractions.html">Attractions</a></li>
+                    <li><a href="/gallery.html">Gallery</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <div class="theme-switcher">
+                    <button id="theme-toggle" title="Change theme" aria-label="Change theme">
+                        <!-- SVG Icons -->
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.591a.75.75 0 11-1.06-1.06l1.591-1.591a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75-.75zM17.834 18.894a.75.75 0 01-1.06 0l-1.591-1.591a.75.75 0 111.06-1.06l1.591 1.591a.75.75 0 010 1.06zM12 21.75a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0V21a.75.75 0 01-.75-.75zM5.106 17.834a.75.75 0 010-1.06l1.591-1.591a.75.75 0 011.06 1.06l-1.591 1.591a.75.75 0 01-1.06 0zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 011.06 0l1.591 1.591a.75.75 0 01-1.06 1.06L6.106 6.166a.75.75 0 010-1.06z"/></svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.472-.948.75.75 0 01.98.98A10.503 10.503 0 0112 21a10.5 10.5 0 01-10.5-10.5c0-4.368 2.667-8.112 6.46-9.774a.75.75 0 01.818.162z" clip-rule="evenodd" /></svg>
+                    </button>
+                </div>
+                <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Room</a>
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 
+        *** THE GUARANTEED FIX IS HERE ***
+        By adding padding-top directly to the <main> tag, we push ALL of the page's 
+        content down, creating the necessary space for the fixed header above. 
+    -->
+    <main style="padding-top: var(--header-height);">
+
+        <!-- Hero Section for Rooms Page -->
+        <section class="hero hero-short">
+            <picture class="hero-background">
+                <source srcset="assets/images/webp/room-hero-background.webp" type="image/webp">
+                <source srcset="assets/images/jpg/room-hero-background.jpg" type="image/jpeg">
+                <img src="assets/images/jpg/room-hero-background.jpg" alt="A beautifully made bed in a sunlit hotel room">
+            </picture>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Rooms & Suites</h1>
+                <p>Find the perfect space for your stay, designed with comfort and convenience in mind.</p>
+            </div>
+        </section>
+
+        <!-- Main Content: Room Listings -->
+        <section class="room-listing-section">
+            <div class="container">
+
+                <!-- Room 1: Club Room -->
+                <div class="room-detail-card">
+                    <div class="room-detail-gallery">
+                        <div class="gallery-main-image">
+                            <picture>
+                                <source srcset="assets/images/webp/Club-Comfort-Room.webp" type="image/webp">
+                                <img src="assets/images/jpg/Club-Comfort-Room.jpg" alt="A clean and comfortable Club Room" id="club-main-img">
+                            </picture>
+                        </div>
+                        <div class="gallery-thumbnails">
+                            <div class="thumbnail-item active">
+                                <img src="assets/images/jpg/Club-Comfort-Room.jpg" alt="Thumbnail of Club Room" data-full-webp="assets/images/webp/Club-Comfort-Room.webp" data-target="club-main-img">
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Club-Comfort-room-Attached-Private-Bathroom.jpg" alt="Thumbnail of attached bathroom" data-full-webp="assets/images/webp/Club-Comfort-room-Attached-Private-Bathroom.webp" data-target="club-main-img">
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Bathroom-Sink-and-Shower.jpg" alt="Thumbnail of sink and shower" data-full-webp="assets/images/webp/Bathroom-Sink-and-Shower.webp" data-target="club-main-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-detail-content">
+                        <h2>Club Room</h2>
+                        <p>Enjoy a cozy stay in our well-appointed 150 sqft Club Room. Featuring a comfortable bed, AC, LED TV, and essential amenities, it's the ideal choice for solo travellers seeking value and convenience in Sahibganj.</p>
+                        <ul class="amenities-list">
+                            <li>150 sqft</li><li>Air Conditioning</li><li>Free Hi-Speed Wi-Fi</li><li>Mini-fridge</li>
+                        </ul>
+                        <div class="room-pricing">Starts from <strong>₹1,599</strong> / night (Single Occupancy)</div>
+                        <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Room 2: Deluxe Room -->
+                <div class="room-detail-card reverse">
+                    <div class="room-detail-gallery">
+                        <div class="gallery-main-image">
+                            <picture>
+                                <source srcset="assets/images/webp/Deluxe-Balcony-Room-Bed.webp" type="image/webp">
+                                <img src="assets/images/jpg/Deluxe-Balcony-Room-Bed.jpg" alt="The stylish and modern Deluxe Room with a king bed" id="deluxe-main-img">
+                            </picture>
+                        </div>
+                        <div class="gallery-thumbnails">
+                            <div class="thumbnail-item active">
+                                <img src="assets/images/jpg/Deluxe-Balcony-Room-Bed.jpg" alt="Thumbnail of Deluxe Room bed" data-full-webp="assets/images/webp/Deluxe-Balcony-Room-Bed.webp" data-target="deluxe-main-img">
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Deluxe-Balcony-Room.jpg" alt="Thumbnail showing the space and balcony" data-full-webp="assets/images/webp/Deluxe-Balcony-Room.webp" data-target="deluxe-main-img">
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Bathroom.jpg" alt="Thumbnail of the bathroom" data-full-webp="assets/images/webp/Bathroom.webp" data-target="deluxe-main-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-detail-content">
+                        <h2>Deluxe Room</h2>
+                        <p>Unwind in our stylish 180 sqft Deluxe Room. Featuring a king bed, a comfortable sofa, and modern amenities like AC and an LED TV, this room offers a perfect retreat with extra space and comfort.</p>
+                        <ul class="amenities-list">
+                            <li>180 sqft</li><li>King Bed & Sofa</li><li>Air Conditioning</li><li>Complimentary Toiletries</li>
+                        </ul>
+                         <div class="room-pricing">Starts from <strong>₹1,899</strong> / night (Single Occupancy)</div>
+                        <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Room 3: Executive Room -->
+                <div class="room-detail-card">
+                    <div class="room-detail-gallery">
+                        <div class="gallery-main-image">
+                            <picture>
+                                <source srcset="assets/images/webp/Executive-Balcony-Room-Bed.webp" type="image/webp">
+                                <img src="assets/images/jpg/Executive-Balcony-Room-Bed.jpg" alt="A spacious Executive Room with a view from the balcony" id="executive-main-img">
+                            </picture>
+                        </div>
+                        <div class="gallery-thumbnails">
+                            <div class="thumbnail-item active">
+                                <img src="assets/images/jpg/Executive-Balcony-Room-Bed.jpg" alt="Thumbnail of Executive Room bed" data-full-webp="assets/images/webp/Executive-Balcony-Room-Bed.webp" data-target="executive-main-img">
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Executive-Balcony-Room-City-View-and-Sofa-seating.jpg" alt="Thumbnail of sofa and city view" data-full-webp="assets/images/webp/Executive-Balcony-Room-City-View-and-Sofa-seating.webp" data-target="executive-main-img">
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Executive-Balcony-Room-Space.jpg" alt="Thumbnail showing room space" data-full-webp="assets/images/webp/Executive-Balcony-Room-Space.webp" data-target="executive-main-img">
+                            </div>
+                             <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Bathroom-WC-and-Geyser.jpg" alt="Thumbnail of bathroom" data-full-webp="assets/images/webp/Bathroom-WC-and-Geyser.webp" data-target="executive-main-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-detail-content">
+                        <h2>Executive Room</h2>
+                        <p>Indulge in our larger 220 sqft Executive Room, featuring a king-size bed and a private balcony. Enjoy added comfort with a mini-fridge, sofa, and complimentary Wi-Fi for a perfect escape in Sahibganj.</p>
+                        <ul class="amenities-list">
+                            <li>220 sqft</li><li>King Bed & Sofa</li><li>Private Balcony</li><li>Free Hi-Speed Wi-Fi</li>
+                        </ul>
+                         <div class="room-pricing">Starts from <strong>₹2,199</strong> / night (Single Occupancy)</div>
+                        <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Room 4: Junior Suite -->
+                <div class="room-detail-card reverse">
+                    <div class="room-detail-gallery">
+                        <div class="gallery-main-image">
+                            <picture>
+                                <source srcset="assets/images/webp/Junior-Balcony-Suite-Bedroom.webp" type="image/webp">
+                                <img src="assets/images/jpg/Junior-Balcony-Suite-Bedroom.jpg" alt="Luxurious Junior Suite with a separate living area" id="suite-main-img">
+                            </picture>
+                        </div>
+                        <div class="gallery-thumbnails">
+                            <div class="thumbnail-item active">
+                                <img src="assets/images/jpg/Junior-Balcony-Suite-Bedroom.jpg" alt="Thumbnail of suite bedroom" data-full-webp="assets/images/webp/Junior-Balcony-Suite-Bedroom.webp" data-target="suite-main-img">
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Junior-Balcony-Suite-Seating-Area.jpg" alt="Thumbnail of suite seating area" data-full-webp="assets/images/webp/Junior-Balcony-Suite-Seating-Area.webp" data-target="suite-main-img">
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Junior-Balcony-Suite-View.jpg" alt="Thumbnail of suite view" data-full-webp="assets/images/webp/Junior-Balcony-Suite-View.webp" data-target="suite-main-img">
+                            </div>
+                             <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Junior-Balcony-Suite-Detail.jpg" alt="Thumbnail of suite detail" data-full-webp="assets/images/webp/Junior-Balcony-Suite-Detail.webp" data-target="suite-main-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-detail-content">
+                        <h2>Junior Suite</h2>
+                        <p>Experience luxury in our spacious 234 sqft Suite. Offering a king bed, a separate living area with a sofa, and a scenic hill view, this suite provides premium amenities for an ultimate Sahibganj experience.</p>
+                        <ul class="amenities-list">
+                            <li>234 sqft</li><li>Separate Living Area</li><li>King Bed</li><li>Scenic Hill View</li>
+                        </ul>
+                         <div class="room-pricing">Starts from <strong>₹2,699</strong> / night (Single Occupancy)</div>
+                        <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Now</a>
+                    </div>
+                </div>
+
+                 <!-- Room 5: Two-Bedroom Premium Suite -->
+                <div class="room-detail-card">
+                     <div class="room-detail-gallery">
+                        <div class="gallery-main-image">
+                            <picture>
+                                <source srcset="assets/images/webp/Family-Apartment-Bedroom-with-Balcony-Ganges-View.webp" type="image/webp">
+                                <img src="assets/images/jpg/Family-Apartment-Bedroom-with-Balcony-Ganges-View.jpg" alt="Expansive living room of the Two-Bedroom Premium Suite" id="premium-suite-main-img">
+                            </picture>
+                        </div>
+                        <div class="gallery-thumbnails">
+                            <div class="thumbnail-item active">
+                                <img src="assets/images/jpg/Family-Apartment-Bedroom-with-Balcony-Ganges-View.jpg" alt="Thumbnail of suite main bedroom" data-full-webp="assets/images/webp/Family-Apartment-Bedroom-with-Balcony-Ganges-View.webp" data-target="premium-suite-main-img">
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Family-Apartment-Connected-Bedrooms.jpg" alt="Thumbnail of connected bedroom" data-full-webp="assets/images/webp/Family-Apartment-Connected-Bedrooms.webp" data-target="premium-suite-main-img">
+                            </div>
+                             <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Family-Apartment-Living-area.jpg" alt="Thumbnail of living area" data-full-webp="assets/images/webp/Family-Apartment-Living-area.webp" data-target="premium-suite-main-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-detail-content">
+                        <h2>Two-Bedroom Premium Suite</h2>
+                        <p>Our expansive 700 sqft Premium Suite is perfect for families or groups. It features two private bedrooms, two balconies, a separate drawing room with a sofa cum bed, and serene views of the river.</p>
+                        <ul class="amenities-list">
+                            <li>700 sqft | Max 6 Guests</li><li>2 Bedrooms & 2 Balconies</li><li>Separate Drawing Room</li><li>River View</li>
+                        </ul>
+                         <div class="room-pricing">Starts from <strong>₹3,999</strong> / night</div>
+                        <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- Room 6: Family Apartment -->
+                <div class="room-detail-card reverse">
+                    <div class="room-detail-gallery">
+                        <div class="gallery-main-image">
+                            <picture>
+                                <source srcset="assets/images/webp/Family-Apartment-Connected-living-area.webp" type="image/webp">
+                                <img src="assets/images/jpg/Family-Apartment-Connected-living-area.jpg" alt="A fully equipped kitchen in the Family Apartment" id="apartment-main-img">
+                            </picture>
+                        </div>
+                        <div class="gallery-thumbnails">
+                            <div class="thumbnail-item active">
+                                <img src="assets/images/jpg/Family-Apartment-Connected-living-area.jpg" alt="Thumbnail of apartment living area" data-full-webp="assets/images/webp/Family-Apartment-Connected-living-area.webp" data-target="apartment-main-img">
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Family-Apartment-Kitchen.jpg" alt="Thumbnail of apartment kitchen" data-full-webp="assets/images/webp/Family-Apartment-Kitchen.webp" data-target="apartment-main-img">
+                            </div>
+                            <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Family-Apartment-Bedroom.jpg" alt="Thumbnail of apartment bedroom" data-full-webp="assets/images/webp/Family-Apartment-Bedroom.webp" data-target="apartment-main-img">
+                            </div>
+                             <div class="thumbnail-item">
+                                <img src="assets/images/jpg/Family-Apartment-Sofa-cum-bed-Seating-Area.jpg" alt="Thumbnail of sofa bed" data-full-webp="assets/images/webp/Family-Apartment-Sofa-cum-bed-Seating-Area.webp" data-target="apartment-main-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-detail-content">
+                        <h2>Family Apartment with Kitchen</h2>
+                        <p>The ultimate choice for extended stays, our 800 sqft apartment offers unparalleled space and convenience. It includes two bedrooms, a drawing room, and a fully equipped kitchen, with views of both the river and hills.</p>
+                        <ul class="amenities-list">
+                            <li>800 sqft | Max 6 Guests</li><li>2 Bedrooms & Kitchen</li><li>Drawing Room with Sofa Bed</li><li>River & Hill View</li>
+                        </ul>
+                         <div class="room-pricing">Starts from <strong>₹4,999</strong> / night</div>
+                        <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <!-- This footer is unchanged and correct. -->
+        <div class="container">
+            <div class="footer-grid">
+                 <div class="footer-column" id="footer-about">
+                    <h4>SURYA PLAZA HOTEL</h4>
+                    <p>Opposite Ray Bahadur Building,<br>J.N.Roy Road, Sahibganj – 816109.<br>Jharkhand. India.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/rooms.html">Rooms & Suites</a></li>
+                        <li><a href="/dining.html">Restaurants</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="/gallery.html">Gallery</a></li>
+                        <li><a href="/events.html">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+919264197987"><strong>Room Booking</strong><br>+91 92641 97987</a></li>
+                        <li style="margin-top: 1rem;"><a href="mailto:sbg.suryaplaza@gmail.com">sbg.suryaplaza@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Policies</h4>
+                     <ul>
+                        <li><a href="/terms.html">Terms & Conditions</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/cancellation.html">Cancellation Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Surya Hotel, All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

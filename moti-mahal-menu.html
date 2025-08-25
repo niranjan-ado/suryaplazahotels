@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The official table menu for Moti Mahal Tandoori Trail at Surya Plaza Hotel, featuring a wide selection of starters, main courses, and beverages.">
+    
+    <title>Menu - Moti Mahal Tandoori Trail | Surya Plaza Hotel</title>
+    
+    <!-- This page uses self-contained internal styles for a unique menu experience -->
+    <style>
+        /* --- FONT IMPORTS & GLOBAL SETUP --- */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400;500&display=swap');
+
+        :root {
+            --font-primary: 'Cormorant Garamond', serif;
+            --font-secondary: 'Poppins', sans-serif;
+            --header-height: 5rem;
+            --color-primary: #8a7458;
+            --color-text: #222222;
+            --color-text-secondary: #555555;
+            --color-background: #ffffff;
+            --color-surface: #f8f8f8;
+            --color-border: #eAEAEA;
+            --space-m: 2rem;
+            --space-l: 4rem;
+        }
+
+        /* Basic Body Styles */
+        body {
+            font-family: var(--font-secondary);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Menu Header */
+        .menu-header {
+            text-align: center;
+            padding: var(--space-l) var(--space-m);
+            background-color: var(--color-surface);
+        }
+        .menu-header h1 {
+            font-family: var(--font-primary);
+            font-size: 3rem;
+            margin: 0 0 0.5rem 0;
+        }
+        .menu-header p {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        /* Main Menu Layout */
+        .menu-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-l) var(--space-m);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-l);
+        }
+
+        /* Individual Menu Section (e.g., Starters, Main Course) */
+        .menu-section {
+            break-inside: avoid; /* Prevents columns from breaking inside a section */
+        }
+        
+        .menu-category-title {
+            font-family: var(--font-primary);
+            font-size: 2.2rem;
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: var(--space-m);
+        }
+
+        .menu-subcategory-title {
+            font-weight: 500;
+            color: var(--color-text);
+            font-size: 1.2rem;
+            margin: var(--space-m) 0 1.5rem 0;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Individual Menu Item */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .item-details {
+            flex-grow: 1;
+        }
+        .item-name {
+            font-weight: 500;
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        .item-description {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin: 0.25rem 0 0 0;
+            line-height: 1.5;
+        }
+        .item-price {
+            font-weight: 500;
+            white-space: nowrap;
+            font-size: 1.1rem;
+        }
+        
+        /* Parallax Visual Break */
+        .menu-parallax {
+            height: 300px;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            grid-column: 1 / -1; /* Makes parallax span both columns */
+        }
+        .menu-parallax::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .menu-container {
+                grid-template-columns: 1fr;
+                gap: 0; /* Stack sections directly on top of each other */
+            }
+            .menu-section {
+                margin-bottom: var(--space-l);
+            }
+            .menu-parallax {
+                background-attachment: scroll; /* Parallax is often distracting on mobile */
+            }
+        }
+        
+        /* We need the main header styles here for consistency */
+        .main-header { position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height); z-index: 1000; background-color: rgba(255,255,255,0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-border); }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 100%; }
+        .logo a { font-family: var(--font-primary); font-size: 1.5rem; font-weight: 600; color: var(--color-text); text-decoration: none; }
+        .main-nav, .header-controls { display: none; } /* Hide nav on this simple menu page to avoid clutter */
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/">SURYA PLAZA</a>
+            </div>
+            <!-- Navigation is hidden for a focused menu view -->
+        </div>
+    </header>
+
+    <main style="padding-top: var(--header-height);">
+
+        <section class="menu-header">
+            <h1>TABLE MENU</h1>
+            <p>Moti Mahal Tandoori Trail | Timing 11:00 AM to 10:30 PM</p>
+        </section>
+
+        <div class="menu-container">
+            <!-- Column 1 -->
+            <div>
+                <div class="menu-section">
+                    <h2 class="menu-category-title">Beverages</h2>
+                    <h3 class="menu-subcategory-title">MM’S SPECIALITY MOCKTAILS</h3>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">NAUGHTY COLA</h4><p class="item-description">Cola – spice mix – lime juice</p></div><span class="item-price">₹89</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">FRESH LIME SODA / WATER</h4><p class="item-description">Salted / Sweet / Mix</p></div><span class="item-price">₹89 / 79</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">JAL JEERA</h4><p class="item-description">Cumin extract – lime juice</p></div><span class="item-price">₹69</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">AAM PANNA</h4><p class="item-description">Mango extracts – lime juice – mint – soda</p></div><span class="item-price">₹99</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">BLUE LAGOON</h4><p class="item-description">Blue curacao – lemonade – carbonated water</p></div><span class="item-price">₹109</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MASALA MOJITO</h4><p class="item-description">Mint – lime juice – masala cola</p></div><span class="item-price">₹129</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">VIRGIN MOJITO</h4><p class="item-description">Mint / Green Apple / Mango / Pineapple / Orange / etc.</p></div><span class="item-price">₹129</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">STRAWBERRY SUNSET</h4><p class="item-description">Strawberry crush - lime - lemonade</p></div><span class="item-price">₹129</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MANGO MINT COOLER</h4><p class="item-description">Mango juice – mint syrup - carbonated water</p></div><span class="item-price">₹149</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">ORANGE FANTASY</h4><p class="item-description">Orange juice – strawberry crush – lime juice – mint</p></div><span class="item-price">₹149</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">FRUIT PUNCH</h4><p class="item-description">Mixed fruit juice - vanilla ice cream - fresh fruits</p></div><span class="item-price">₹149</span></div>
+                    
+                    <h3 class="menu-subcategory-title">NOURISHING BEVERAGES</h3>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">THICK SHAKES</h4><p class="item-description">Oreo / Kitkat / Nutella / M&M / Brownie</p></div><span class="item-price">₹159</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MILK SHAKES</h4><p class="item-description">Mango / Vanilla / Chocolate / Strawberry / Blueberry</p></div><span class="item-price">₹139</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">COLD COFFEE</h4><p class="item-description">With or Without Ice Cream</p></div><span class="item-price">₹139 / 119</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">FLAVOURED LASSI</h4><p class="item-description">Mango / Strawberry / Blueberry</p></div><span class="item-price">₹119</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">LASSI</h4><p class="item-description">Salted / Sweet</p></div><span class="item-price">₹99</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">BUTTER MILK</h4><p class="item-description">Plain / Salted / Masala</p></div><span class="item-price">₹79</span></div>
+                </div>
+
+                <div class="menu-section">
+                    <h2 class="menu-category-title">Soups</h2>
+                    <h3 class="menu-subcategory-title">MM’S HOT N REFRESHING SOUPS (CHICKEN / VEG)</h3>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">TAIMOORI SHORBA</h4></div><span class="item-price">₹159 / 139</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">TALUMEIN</h4></div><span class="item-price">₹159 / 139</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">HOT N SOUR</h4></div><span class="item-price">₹159 / 139</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MANCHOW</h4></div><span class="item-price">₹159 / 139</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">SWEET CORN</h4></div><span class="item-price">₹159 / 139</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">LEMON CORIANDER</h4></div><span class="item-price">₹159 / 139</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CREAM OF CHICKEN</h4></div><span class="item-price">₹169</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CREAM OF MUSHROOM</h4></div><span class="item-price">₹149</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CREAM OF TOMATO</h4></div><span class="item-price">₹149</span></div>
+                </div>
+
+                <div class="menu-section">
+                    <h2 class="menu-category-title">Tandoori Starters</h2>
+                    <h3 class="menu-subcategory-title">VEGETARIAN</h3>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MM’S SPECIAL TANDOORI VEG MIX GRILL</h4></div><span class="item-price">₹549</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">SAUFIANI MALAI PANEER TIKKA</h4></div><span class="item-price">₹279</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">TANDOORI PANEER TIKKA</h4></div><span class="item-price">₹279</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">HARIYALI PANEER TIKKA</h4></div><span class="item-price">₹259</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">DAHI KE SEEKH KEBAB</h4></div><span class="item-price">₹259</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MALAI SOYA CHAAP</h4></div><span class="item-price">₹259</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">TANDOORI SOYA CHAAP</h4></div><span class="item-price">₹239</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">STUFFED TANDOORI ALOO</h4></div><span class="item-price">₹259</span></div>
+                </div>
+            </div>
+            
+            <!-- Column 2 -->
+            <div>
+                 <div class="menu-section">
+                    <h2 class="menu-category-title">Tandoori Starters</h2>
+                    <h3 class="menu-subcategory-title">NON-VEGETARIAN</h3>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MM’S SPECIAL TANDOORI NON-VEG MIX GRILL</h4></div><span class="item-price">₹649</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">AMRITSARI FISH FRY</h4></div><span class="item-price">₹299</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">LAHSOONI FISH TIKKA</h4></div><span class="item-price">₹289</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MUTTON SEEKH KEBAB</h4></div><span class="item-price">₹339</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">THE ORIGINAL CHICKEN PAKORA</h4><p class="item-description">Half / Full</p></div><span class="item-price">₹299 / 499</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">AFGHANI CHICKEN</h4><p class="item-description">Half / Full</p></div><span class="item-price">₹299 / 499</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">THE ORIGINAL 1920 TANDOORI CHICKEN</h4><p class="item-description">Half / Full</p></div><span class="item-price">₹279 / 479</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">PUDINA CHICKEN TIKKA</h4></div><span class="item-price">₹289</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">TANDOORI CHICKEN TIKKA</h4></div><span class="item-price">₹289</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MURGH MALAI TIKKA</h4></div><span class="item-price">₹309</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">TANGRI KEBAB</h4><p class="item-description">2 Pcs / 4 Pcs</p></div><span class="item-price">₹279 / 479</span></div>
+                </div>
+
+                <div class="menu-section">
+                    <h2 class="menu-category-title">Main Course</h2>
+                     <h3 class="menu-subcategory-title">VEGETARIAN</h3>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">THE ORIGINAL BUTTER PANEER</h4><p class="item-description">Our original recipe since 1920</p></div><span class="item-price">₹309</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">SHAHI PANEER</h4></div><span class="item-price">₹309</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">PANEER LABABDAR</h4></div><span class="item-price">₹309</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">KADHAI PANEER</h4></div><span class="item-price">₹289</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">KESARI MALAI KOFTA</h4></div><span class="item-price">₹289</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MIX VEGETABLE</h4></div><span class="item-price">₹249</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">THE ORIGINAL 1920 DAL MAKHANI</h4></div><span class="item-price">₹259</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">YELLOW DAL TADKA</h4></div><span class="item-price">₹229</span></div>
+                </div>
+                 <div class="menu-section">
+                    <h3 class="menu-subcategory-title">NON-VEGETARIAN</h3>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">THE ORIGINAL 1920 BUTTER CHICKEN</h4><p class="item-description">With or Without Bone</p></div><span class="item-price">₹349</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CHICKEN TIKKA MASALA</h4></div><span class="item-price">₹349</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">KADHAI CHICKEN</h4></div><span class="item-price">₹329</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MUTTON ROGANJOSH</h4></div><span class="item-price">₹369</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">RARA MEAT</h4></div><span class="item-price">₹399</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">FISH CURRY</h4></div><span class="item-price">₹349</span></div>
+                </div>
+            </div>
+
+            <section class="menu-parallax" style="background-image: url('assets/images/jpg/Moti-Mahal-Decor.jpg');"></section>
+
+            <!-- Column 1 Continue -->
+            <div>
+                 <div class="menu-section">
+                    <h2 class="menu-category-title">Biryanis & Rice</h2>
+                    <h3 class="menu-subcategory-title">LAZIZ BIRYANIS & PULAO</h3>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MUTTON DUM BIRYANI</h4></div><span class="item-price">₹319</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CHICKEN DUM BIRYANI</h4></div><span class="item-price">₹299</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">VEGETABLE DUM BIRYANI</h4></div><span class="item-price">₹259</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">PULAO</h4><p class="item-description">Vegetable / Mutter</p></div><span class="item-price">₹199</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">JEERA RICE</h4></div><span class="item-price">₹169</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">PLAIN RICE</h4></div><span class="item-price">₹149</span></div>
+                </div>
+            </div>
+
+            <!-- Column 2 Continue -->
+             <div>
+                <div class="menu-section">
+                    <h2 class="menu-category-title">Breads & Desserts</h2>
+                    <h3 class="menu-subcategory-title">INDIAN BREADS</h3>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">TANDOORI ROTI</h4><p class="item-description">Plain / Butter</p></div><span class="item-price">₹24 / 29</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">NAAN</h4><p class="item-description">Plain / Butter</p></div><span class="item-price">₹49 / 59</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">GARLIC NAAN</h4></div><span class="item-price">₹69</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">LACHHA PARANTHA</h4></div><span class="item-price">₹49</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">STUFFED KULCHA</h4><p class="item-description">Aloo / Pyaz / Paneer</p></div><span class="item-price">₹89 / 119</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">BREAD BASKET</h4></div><span class="item-price">₹249</span></div>
+                    
+                    <h3 class="menu-subcategory-title">DESSERTS</h3>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CHOCOLICIOUS SIZZLING BROWNIE</h4><p class="item-description">With Ice Cream</p></div><span class="item-price">₹169</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">GULAB JAMUN</h4></div><span class="item-price">₹89</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">KESAR PHIRNI</h4></div><span class="item-price">₹129</span></div>
+                    <div class="menu-item"><div class="item-details"><h4 class="item-name">ICE CREAM FROM THE TUB</h4></div><span class="item-price">₹89</span></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+    <!-- A minimal footer can be used for menu pages, or the full one -->
+    <footer class="main-footer">
+       <div class="container">
+           <div class="footer-bottom">
+               <p>&copy; <script>document.write(new Date().getFullYear())</script> Surya Hotel, All Rights Reserved.</p>
+           </div>
+       </div>
+    </footer>
+
+</body>
+</html>

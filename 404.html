@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page Not Found. Welcome to the newly enhanced Surya Plaza Hotel website. Let us help you get back on track.">
+    
+    <title>Page Not Found (404) | Surya Plaza Hotel</title>
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/main.js" defer></script>
+
+    <!-- This self-contained style block contains all necessary improvements and features for this page -->
+    <style>
+        /* Rule 1: Fix for the main header overlap */
+        main {
+            padding-top: var(--header-height, 5rem);
+        }
+
+        /* Rule 2: Main content container for the 404 page */
+        .error-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            padding: var(--space-xl, 6rem) var(--space-m, 2rem);
+        }
+        .error-container h1 {
+            font-family: var(--font-primary, 'Cormorant Garamond', serif);
+            font-size: 6rem;
+            line-height: 1;
+            color: var(--color-primary, #8a7458);
+            margin: 0;
+        }
+        .error-container h2 {
+            font-family: var(--font-primary, 'Cormorant Garamond', serif);
+            font-size: 2.5rem;
+            margin: 1rem 0;
+        }
+        .error-container p {
+            color: var(--color-text-secondary, #555);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* Rule 3: Search Bar */
+        .search-bar-wrapper {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .search-form {
+            display: flex;
+            border: 1px solid var(--color-border, #eaeaea);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+        .search-form input {
+            flex-grow: 1;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            background: var(--color-background, #fff);
+            color: var(--color-text, #222);
+        }
+        .search-form input:focus { outline: none; }
+        .search-form button {
+            background-color: var(--color-primary, #8a7458);
+            border: none;
+            color: white;
+            padding: 0 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .search-form button:hover { background-color: var(--color-primary-hover, #74604a); }
+        .error-log-note {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary, #555);
+            margin-top: 1rem;
+        }
+
+        /* Rule 4: "Get Back on Track" Section */
+        .recovery-hub {
+            background-color: var(--color-surface, #f8f8f8);
+        }
+        .recovery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-m, 2rem);
+        }
+        .recovery-card {
+            background-color: var(--color-background, #fff);
+            border: 1px solid var(--color-border, #eaeaea);
+            border-radius: var(--border-radius, 6px);
+            padding: var(--space-l, 4rem) var(--space-m, 2rem);
+            text-align: center;
+            text-decoration: none;
+            color: var(--color-text, #222);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .recovery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+        }
+        .recovery-card h3 {
+            font-family: var(--font-primary, 'Cormorant Garamond', serif);
+            font-size: 1.8rem;
+        }
+        .recovery-card p {
+            color: var(--color-text-secondary, #555);
+        }
+        .video-container {
+            grid-column: 1 / -1; /* Span full width on multi-column layouts */
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--border-radius, 6px);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <!-- The header content is identical to other pages for consistency -->
+        <div class="header-container">
+            <div class="logo"><a href="/">SURYA PLAZA</a></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/rooms.html">Rooms</a></li>
+                    <li><a href="/dining.html">Restaurants</a></li>
+                    <li><a href="/events.html">Events</a></li>
+                    <li><a href="/attractions.html">Attractions</a></li>
+                    <li><a href="/gallery.html">Gallery</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <div class="theme-switcher"><button id="theme-toggle" title="Change theme" aria-label="Change theme"><svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.591a.75.75 0 11-1.06-1.06l1.591-1.591a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75-.75zM17.834 18.894a.75.75 0 01-1.06 0l-1.591-1.591a.75.75 0 111.06-1.06l1.591 1.591a.75.75 0 010 1.06zM12 21.75a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0V21a.75.75 0 01-.75-.75zM5.106 17.834a.75.75 0 010-1.06l1.591-1.591a.75.75 0 011.06 1.06l-1.591 1.591a.75.75 0 01-1.06 0zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 011.06 0l1.591 1.591a.75.75 0 01-1.06 1.06L6.106 6.166a.75.75 0 010-1.06z"/></svg><svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.472-.948.75.75 0 01.98.98A10.503 10.503 0 0112 21a10.5 10.5 0 01-10.5-10.5c0-4.368 2.667-8.112 6.46-9.774a.75.75 0 01.818.162z" clip-rule="evenodd" /></svg></button></div>
+                <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Room</a>
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="error-container">
+            <h1>404</h1>
+            <h2>This Page Seems to Be Misplaced</h2>
+            <p>As part of our recent website enhancement, some of our old links have been updated. It appears you may have followed an outdated one. Not to worry, we can help you find what you're looking for.</p>
+            <div class="search-bar-wrapper">
+                <form action="/search" method="get" class="search-form">
+                    <input type="search" name="q" placeholder="Search our site..." aria-label="Search">
+                    <button type="submit" aria-label="Submit search">Go</button>
+                </form>
+            </div>
+            <p class="error-log-note">We have automatically logged this issue, and our technical team will investigate to prevent it from happening again.</p>
+        </div>
+
+        <section class="recovery-hub">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Let's Get You Back on Track</h2>
+                    <p>Here are some of our most popular destinations, or feel free to contact us directly for assistance.</p>
+                </div>
+                <div class="recovery-grid">
+                    <!-- Primary Action Cards -->
+                    <a href="/" class="recovery-card"><h3>Return to Homepage</h3><p>Start your journey from the beginning.</p></a>
+                    <a href="/rooms.html" class="recovery-card"><h3>Explore Our Rooms</h3><p>View our collection of rooms and suites.</p></a>
+                    <a href="/dining.html" class="recovery-card"><h3>View Dining Options</h3><p>Discover our renowned restaurants.</p></a>
+                    <a href="/gallery.html" class="recovery-card"><h3>Visit the Gallery</h3><p>See a visual tour of our hotel.</p></a>
+                    
+                    <!-- YouTube Video Embed -->
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-cta">
+            <div class="container">
+                <h2>Still Can't Find It?</h2>
+                <p>Our team is available 24/7 to assist you. Please don't hesitate to get in touch.</p>
+                <div class="contact-methods">
+                    <a href="/contact.html" class="btn-secondary">Contact Us Directly</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <!-- Footer is unchanged and correct -->
+        <div class="container"><div class="footer-grid"><div class="footer-column" id="footer-about"><h4>SURYA PLAZA HOTEL</h4><p>Opposite Ray Bahadur Building,<br>J.N.Roy Road, Sahibganj – 816109.<br>Jharkhand. India.</p></div><div class="footer-column"><h4>Quick Links</h4><ul><li><a href="/rooms.html">Rooms & Suites</a></li><li><a href="/dining.html">Restaurants</a></li><li><a href="/events.html">Events</a></li><li><a href="/gallery.html">Gallery</a></li></ul></div><div class="footer-column"><h4>Contact</h4><ul><li><a href="tel:+919264197987"><strong>Room Booking</strong><br>+91 9264197987</a></li><li style="margin-top: 1rem;"><a href="tel:+919264197987"><strong>Table Booking</strong><br>+91 9264197987</a></li></ul></div><div class="footer-column"><h4>Policies</h4><ul><li><a href="/terms.html">Terms & Conditions</a></li><li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/cancellation.html">Cancellation Policy</a></li></ul></div></div><div class="footer-bottom"><p>&copy; <script>document.write(new Date().getFullYear())</script> Surya Hotel, All Rights Reserved.</p></div></div>
+    </footer>
+
+</body>
+</html>

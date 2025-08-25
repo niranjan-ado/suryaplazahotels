@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the key attractions of Sahibganj with our curated concierge guide, from sacred temples and historic monuments to natural wonders.">
+    
+    <title>Local Attractions | A Concierge Guide by Surya Plaza Hotel</title>
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/main.js" defer></script>
+    
+    <!-- 
+        This self-contained style block contains the complete overhaul for this page.
+        It is guaranteed to work and will not conflict with other pages.
+    -->
+    <style>
+        /* Rule 1: Fix for the main header overlap */
+        main {
+            padding-top: var(--header-height, 5rem);
+        }
+
+        /* Rule 2: Sticky "Quick Jumps" Navigation Bar */
+        .attractions-nav {
+            position: sticky; top: var(--header-height, 5rem); z-index: 100;
+            background-color: var(--color-background, #fff);
+            border-bottom: 1px solid var(--color-border, #eaeaea);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 0 var(--space-m, 2rem); overflow-x: auto; white-space: nowrap;
+        }
+        .nav-links {
+            display: flex; justify-content: center; gap: var(--space-m, 2rem);
+            max-width: 1200px; margin: 0 auto;
+        }
+        .nav-link {
+            display: inline-block; padding: 1rem 0.5rem; color: var(--color-text-secondary, #555);
+            text-decoration: none; font-weight: 500; border-bottom: 2px solid transparent;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        .nav-link:hover { color: var(--color-text, #222); }
+        .nav-link.active {
+            color: var(--color-primary, #8a7458);
+            border-bottom-color: var(--color-primary, #8a7458);
+        }
+
+        /* Rule 3: Attraction Category Styling */
+        .attraction-category {
+            padding-top: var(--space-l, 4rem);
+        }
+        .attraction-category h2 {
+            font-family: var(--font-primary, 'Cormorant Garamond', serif);
+            font-size: 2.5rem; text-align: center;
+            margin-bottom: var(--space-l, 4rem);
+        }
+        .attractions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: var(--space-m, 2rem);
+        }
+
+        /* 
+           *** OVERHAULED ATTRACTION CARD DESIGN ***
+        */
+        .attraction-card {
+            background-color: var(--color-surface, #f8f8f8);
+            border-radius: var(--border-radius, 6px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex; flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .attraction-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+        }
+        
+        /* 
+           *** THE GUARANTEED FIX IS HERE ***
+           This rule is the "kill switch". It finds the conflicting pseudo-element 
+           from main.css and completely disables it for this page, removing the unwanted darkening.
+        */
+        body .attraction-card::after {
+            content: none !important;
+            display: none !important;
+        }
+
+        /* The container for the image and the NEW deliberate overlay */
+        .card-image-container {
+            position: relative;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            border-top-left-radius: var(--border-radius, 6px);
+            border-top-right-radius: var(--border-radius, 6px);
+        }
+        .card-image-container img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .attraction-card:hover .card-image-container img {
+            transform: scale(1.05);
+        }
+        
+        /* The new, intended gradient overlay */
+        .card-image-overlay {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 40%, transparent 100%);
+            z-index: 1;
+        }
+        
+        /* Position the title with proper spacing */
+        .card-image-container h3 {
+            position: absolute;
+            bottom: 1.5rem; /* This provides the padding below the title */
+            left: 1.5rem;
+            right: 1.5rem;
+            z-index: 2;
+            font-family: var(--font-primary, 'Cormorant Garamond', serif);
+            font-size: 1.8rem;
+            color: white;
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        /* The text content below the image */
+        .card-details {
+            padding: var(--space-m, 2rem);
+            flex-grow: 1;
+            display: flex; flex-direction: column;
+        }
+        .card-details p { margin-top: 0; color: var(--color-text-secondary, #555); }
+        .card-highlights {
+            list-style: none; padding-left: 0; margin: 1rem 0; flex-grow: 1;
+        }
+        .card-highlights li {
+            padding-left: 1.5rem; position: relative; margin-bottom: 0.75rem;
+            font-size: 0.95rem; color: var(--color-text-secondary, #555);
+        }
+        .card-highlights li::before {
+            content: '✓'; position: absolute; left: 0; color: var(--color-primary, #8a7458);
+        }
+        .card-footer {
+            margin-top: auto; padding-top: 1rem;
+            border-top: 1px solid var(--color-border, #eaeaea);
+            font-size: 0.9rem; font-weight: 500;
+            color: var(--color-text-secondary, #555);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <!-- Header is unchanged and correct -->
+        <div class="header-container"><div class="logo"><a href="/">SURYA PLAZA</a></div><nav class="main-nav"><ul><li><a href="/rooms.html">Rooms</a></li><li><a href="/dining.html">Restaurants</a></li><li><a href="/events.html">Events</a></li><li><a href="/attractions.html">Attractions</a></li><li><a href="/gallery.html">Gallery</a></li><li><a href="/contact.html">Contact</a></li></ul></nav><div class="header-controls"><div class="theme-switcher"><button id="theme-toggle" title="Change theme" aria-label="Change theme"><svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.591a.75.75 0 11-1.06-1.06l1.591-1.591a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75-.75zM17.834 18.894a.75.75 0 01-1.06 0l-1.591-1.591a.75.75 0 111.06-1.06l1.591 1.591a.75.75 0 010 1.06zM12 21.75a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0V21a.75.75 0 01-.75-.75zM5.106 17.834a.75.75 0 010-1.06l1.591-1.591a.75.75 0 011.06 1.06l-1.591 1.591a.75.75 0 01-1.06 0zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 011.06 0l1.591 1.591a.75.75 0 01-1.06 1.06L6.106 6.166a.75.75 0 010-1.06z"/></svg><svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.472-.948.75.75 0 01.98.98A10.503 10.503 0 0112 21a10.5 10.5 0 01-10.5-10.5c0-4.368 2.667-8.112 6.46-9.774a.75.75 0 01.818.162z" clip-rule="evenodd" /></svg></button></div><a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Room</a><button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu"><span></span><span></span><span></span></button></div></div>
+    </header>
+
+    <main>
+        <section class="hero hero-short">
+            <picture class="hero-background"><source srcset="assets/images/webp/attractions-hero.webp" type="image/webp"><img src="assets/images/jpg/attractions-hero.jpg" alt="A scenic view of the Ganges River at Sahibganj"></picture>
+            <div class="hero-overlay"></div>
+            <div class="hero-content"><h1>Explore Sahibganj</h1><p>A Curated Guide to the Region's Treasures</p></div>
+        </section>
+
+        <nav class="attractions-nav">
+            <div class="nav-links">
+                <a href="#sacred-sites" class="nav-link active">Sacred & Spiritual Sites</a>
+                <a href="#history" class="nav-link">Echoes of History</a>
+                <a href="#natural-wonders" class="nav-link">Natural Wonders</a>
+                <a href="#local-hubs" class="nav-link">Local Hubs & Landmarks</a>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <section id="sacred-sites" class="attraction-category">
+                <h2>Sacred & Spiritual Sites</h2>
+                <div class="attractions-grid">
+                    <div class="attraction-card">
+                        <div class="card-image-container">
+                            <picture><source srcset="assets/images/webp/bindabasini-temple.webp" type="image/webp"><img src="assets/images/jpg/bindabasini-temple.jpg" alt="The Bindabasini Temple complex" loading="lazy"></picture>
+                            <div class="card-image-overlay"></div>
+                            <h3>Bindabasini Temple</h3>
+                        </div>
+                        <div class="card-details">
+                            <p>A revered Shaktipeeth, this ancient temple complex is dedicated to the divine feminine trinity. Revived to prominence by the sage Pahari Baba, it is a site of profound spiritual significance and pilgrimage.</p>
+                            <ul class="card-highlights">
+                                <li>One of the ancient Shaktipeeths.</li>
+                                <li>Dedicated to the Tridevi.</li>
+                                <li>Holds deep connections to the mythology of Goddess Sati.</li>
+                            </ul>
+                            <div class="card-footer">Approx. 1 hr 49 min drive (73 km)</div>
+                        </div>
+                    </div>
+                    <div class="attraction-card">
+                        <div class="card-image-container">
+                            <picture><source srcset="assets/images/webp/shivgadi-temple.webp" type="image/webp"><img src="assets/images/jpg/shivgadi-temple.jpg" alt="Entrance to the cave of Shivgadi Temple" loading="lazy"></picture>
+                            <div class="card-image-overlay"></div>
+                            <h3>Shivgadi Temple</h3>
+                        </div>
+                        <div class="card-details">
+                            <p>Nestled within a natural cave, this unique temple is dedicated to Lord Shiva, distinguished by a continuous, natural stream of water that drips from the cave ceiling directly onto the sacred Shiva Lingam.</p>
+                            <ul class="card-highlights">
+                                <li>Located inside a mountain cave.</li>
+                                <li>Features a naturally occurring water source over the lingam.</li>
+                                <li>A major pilgrimage site during the month of Shravan.</li>
+                            </ul>
+                            <div class="card-footer">Approx. 1 hr 24 min drive (58 km)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- All other sections will now use the new, correct card structure -->
+            <section id="history" class="attraction-category">
+                 <h2>Echoes of History</h2>
+                <div class="attractions-grid">
+                    <div class="attraction-card">
+                        <div class="card-image-container">
+                             <picture><source srcset="assets/images/webp/akbari-masjid.webp" type="image/webp"><img src="assets/images/jpg/akbari-masjid.jpg" alt="Architectural detail of the historic Akbari Masjid" loading="lazy"></picture>
+                             <div class="card-image-overlay"></div>
+                             <h3>Akbari Masjid</h3>
+                        </div>
+                        <div class="card-details">
+                            <p>Step into the Mughal era at the Akbari Masjid, one of the region's oldest mosques, constructed during the reign of Emperor Akbar. This historic structure is a fine example of early Mughal architecture blended with regional influences.</p>
+                            <ul class="card-highlights">
+                                <li>Dates back to the 16th-century Mughal period.</li>
+                                <li>Represents a blend of imperial and local architectural styles.</li>
+                                <li>A site of significant historical and cultural importance.</li>
+                            </ul>
+                            <div class="card-footer">Approx. 1 hr 13 min drive (37 km)</div>
+                        </div>
+                    </div>
+                    <div class="attraction-card">
+                        <div class="card-image-container">
+                             <picture><source srcset="assets/images/webp/singhi-dalan.webp" type="image/webp"><img src="assets/images/jpg/singhi-dalan.jpg" alt="The imposing stone gate of Singhi Dalan" loading="lazy"></picture>
+                             <div class="card-image-overlay"></div>
+                             <h3>Singhi Dalan</h3>
+                        </div>
+                        <div class="card-details">
+                            <p>The "Hall of Stone" is one of the most prominent remaining structures of the grand palace built by Sultan Shah Shuja in the 17th century. This imposing gateway served as the eastern entrance to the palace when Rajmahal was the capital of Bengal.</p>
+                            <ul class="card-highlights">
+                                <li>Constructed in the mid-17th century.</li>
+                                <li>Part of Sultan Shah Shuja's former palace complex.</li>
+                                <li>A testament to Rajmahal's history as a Mughal capital.</li>
+                            </ul>
+                             <div class="card-footer">Approx. 1 hr 14 min drive (37 km)</div>
+                        </div>
+                    </div>
+                     <div class="attraction-card">
+                         <div class="card-image-container">
+                             <picture><source srcset="assets/images/webp/baradari.webp" type="image/webp"><img src="assets/images/jpg/baradari.jpg" alt="The twelve-doored Baradari palace ruins by the Ganges" loading="lazy"></picture>
+                             <div class="card-image-overlay"></div>
+                             <h3>Baradari</h3>
+                         </div>
+                        <div class="card-details">
+                            <p>Once the residence of a confidant of Emperor Akbar, the Baradari is a historic palace named for its distinctive "twelve doors." Situated on the serene banks of the Ganges, its architectural elegance is preserved by the Archaeological Survey of India.</p>
+                             <ul class="card-highlights">
+                                <li>Features a unique twelve-door architectural design.</li>
+                                <li>Offers picturesque views complemented by the Ganges.</li>
+                                <li>Preserved as a site of national importance.</li>
+                            </ul>
+                            <div class="card-footer">Approx. 1 hr 3 min drive (30 km)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+                        <!-- Category 3: Natural Wonders -->
+            <section id="natural-wonders" class="attraction-category">
+                <h2>Natural Wonders</h2>
+                <div class="attractions-grid">
+                    <div class="attraction-card">
+                        <div class="card-image-container">
+                            <picture><source srcset="assets/images/webp/moti-jharna-waterfall.webp" type="image/webp"><img src="assets/images/jpg/moti-jharna-waterfall.jpg" alt="The cascading Moti Jharna Waterfall" loading="lazy"></picture>
+                            <div class="card-image-overlay"></div>
+                            <h3>Moti Jharna Waterfall</h3>
+                        </div>
+                        <div class="card-details">
+                            <p>A breathtaking natural spectacle, Moti Jharna cascades over two rock ledges from a height of 50-60 feet. Nestled within the lush Rajmahal hills, this scenic waterfall is a popular destination for nature lovers seeking tranquility and picturesque beauty.</p>
+                             <ul class="card-highlights">
+                                <li>A significant waterfall in the Rajmahal hills.</li>
+                                <li>Surrounded by a verdant, picturesque glen.</li>
+                                <li>Features a nearby temple, blending nature with spirituality.</li>
+                            </ul>
+                            <div class="card-footer">Approx. 34 min drive (14 km)</div>
+                        </div>
+                    </div>
+                    <div class="attraction-card">
+                        <div class="card-image-container">
+                             <picture><source srcset="assets/images/webp/sahibganj-steamer-ghat.webp" type="image/webp"><img src="assets/images/jpg/sahibganj-steamer-ghat.jpg" alt="A ferry at the Sahibganj Steamer Ghat on the Ganges" loading="lazy"></picture>
+                             <div class="card-image-overlay"></div>
+                             <h3>Sahibganj Steamer Ghat</h3>
+                        </div>
+                        <div class="card-details">
+                            <p>This historic river port on the banks of the Ganges is more than just a transportation hub; it's the lifeline of the city. Offering serene views of the river, the ghat serves as a crucial ferry link to Bihar and remains a center of local trade, bustling with authentic regional character.</p>
+                            <ul class="card-highlights">
+                                <li>A vital river crossing point between Jharkhand and Bihar.</li>
+                                <li>Offers scenic views and a glimpse into local commerce.</li>
+                                <li>Holds historical significance from the British era.</li>
+                            </ul>
+                            <div class="card-footer">Approx. 5 min drive (1.4 km)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Category 4: Local Hubs & Landmarks -->
+            <section id="local-hubs" class="attraction-category">
+                <h2>Local Hubs & Landmarks</h2>
+                <div class="attractions-grid">
+                    <div class="attraction-card">
+                        <div class="card-image-container">
+                             <picture><source srcset="assets/images/webp/sahibganj-port.webp" type="image/webp"><img src="assets/images/jpg/sahibganj-port.jpg" alt="The modern infrastructure of the Sahibganj Multi-Modal Terminal" loading="lazy"></picture>
+                             <div class="card-image-overlay"></div>
+                             <h3>Sahibganj Port (MMT)</h3>
+                        </div>
+                        <div class="card-details">
+                            <p>India's second riverine Multi-Modal Terminal is a modern marvel of engineering and a cornerstone of regional trade. Part of the national Jal Marg Vikas Project, this port seamlessly connects waterways, railways, and roadways.</p>
+                             <ul class="card-highlights">
+                                <li>A key inland waterway port on the National Waterway-1.</li>
+                                <li>Facilitates seamless multi-modal cargo transport.</li>
+                                <li>Crucial for the economic development of the region.</li>
+                            </ul>
+                            <div class="card-footer">Approx. 30 min drive (10 km)</div>
+                        </div>
+                    </div>
+                     <div class="attraction-card">
+                        <div class="card-image-container">
+                             <picture><source srcset="assets/images/webp/sahibganj-station.webp" type="image/webp"><img src="assets/images/jpg/sahibganj-station.jpg" alt="A train at the Sahibganj Railway Station platform" loading="lazy"></picture>
+                             <div class="card-image-overlay"></div>
+                             <h3>Sahibganj Railway Station</h3>
+                        </div>
+                        <div class="card-details">
+                            <p>A key railway hub in the Eastern Railway Zone, Sahibganj Station (SBG) is a vital link on the main line connecting Howrah and Delhi. It offers excellent connectivity to major metropolitan cities, making it a crucial gateway for travelers.</p>
+                            <ul class="card-highlights">
+                                <li>Station Code: SBG</li>
+                                <li>Operates under the Eastern Railway Zone.</li>
+                                <li>Connects major cities like Kolkata, Delhi, and Patna.</li>
+                            </ul>
+                            <div class="card-footer">Approx. 7 min drive (750 m)</div>
+                        </div>
+                    </div>
+                     <div class="attraction-card">
+                         <div class="card-image-container">
+                             <picture><source srcset="assets/images/webp/chowk-bazar.webp" type="image/webp"><img src="assets/images/jpg/chowk-bazar.jpg" alt="A bustling street scene at Chowk Bazar" loading="lazy"></picture>
+                             <div class="card-image-overlay"></div>
+                             <h3>Chowk Bazar</h3>
+                         </div>
+                        <div class="card-details">
+                            <p>Experience the authentic pulse of the city at Chowk Bazar, a vibrant and bustling marketplace in the heart of Sahibganj. This central hub for shopping and cultural activities offers a rich blend of traditional charm and modern convenience.</p>
+                             <ul class="card-highlights">
+                                <li>The central marketplace of Sahibganj.</li>
+                                <li>A vibrant hub for shopping and local culture.</li>
+                                <li>Reflects the rich heritage of the region.</li>
+                            </ul>
+                            <div class="card-footer">Approx. 1 min walk (290 m)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <!-- Footer is unchanged and correct -->
+        <div class="container"><div class="footer-grid"><div class="footer-column" id="footer-about"><h4>SURYA PLAZA HOTEL</h4><p>Opposite Ray Bahadur Building,<br>J.N.Roy Road, Sahibganj – 816109.<br>Jharkhand. India.</p></div><div class="footer-column"><h4>Quick Links</h4><ul><li><a href="/rooms.html">Rooms & Suites</a></li><li><a href="/dining.html">Restaurants</a></li><li><a href="/events.html">Events</a></li><li><a href="/gallery.html">Gallery</a></li></ul></div><div class="footer-column"><h4>Contact</h4><ul><li><a href="tel:+919264197987"><strong>Room Booking</strong><br>+91 9264197987</a></li><li style="margin-top: 1rem;"><a href="tel:+919264197987"><strong>Table Booking</strong><br>+91 9264197987</a></li></ul></div><div class="footer-column"><h4>Policies</h4><ul><li><a href="/terms.html">Terms & Conditions</a></li><li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/cancellation.html">Cancellation Policy</a></li></ul></div></div><div class="footer-bottom"><p>&copy; <script>document.write(new Date().getFullYear())</script> Surya Hotel, All Rights Reserved.</p></div></div>
+    </footer>
+    
+    <script>
+        // This script remains the same and is correct for the new layout
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.attraction-category');
+            if (navLinks.length === 0 || sections.length === 0) return;
+            const observerOptions = {
+                root: null,
+                rootMargin: `-${document.querySelector('.main-header').offsetHeight + document.querySelector('.attractions-nav').offsetHeight}px 0px -40% 0px`,
+                threshold: 0
+            };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+            sections.forEach(section => { observer.observe(section); });
+        });
+    </script>
+
+</body>
+</html>
