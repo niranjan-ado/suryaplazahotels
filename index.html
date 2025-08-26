@@ -1,21 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Experience a legacy of comfort and excellence at Surya Plaza Hotel, offering premium accommodations, renowned on-site dining, and elegant event spaces in Sahibganj, Jharkhand.">
     
     <title>Surya Plaza Hotel | Official Website | Sahibganj, Jharkhand</title>
-    
+    <meta name="description" content="Experience a legacy of comfort and excellence at Surya Plaza Hotel, offering premium accommodations, renowned on-site dining, and elegant event spaces in Sahibganj, Jharkhand.">
     <link rel="canonical" href="https://www.suryaplazahotels.com/">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <script src="assets/js/main.js" defer></script>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
 
-    <!-- 
-        *** SEO Schema Markup for Google ***
-        This JSON-LD block provides structured data about your hotel to search engines,
-        which can enhance your appearance in search results.
-    -->
+    <!-- Updated Structured Data for Google -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -32,31 +29,24 @@
         "postalCode": "816109",
         "addressCountry": "IN"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "25.2442", 
-        "longitude": "87.6477" 
-      },
       "url": "https://www.suryaplazahotels.com/",
-      "image": "https://www.suryaplazahotels.com/assets/images/jpg/hero-background.jpg",
+      "image": "https://www.suryaplazahotels.com/assets/images/hero-background.jpg",
       "priceRange": "₹₹",
       "starRating": {
         "@type": "Rating",
         "ratingValue": "4"
-      },
-      "checkinTime": "00:00",
-      "checkoutTime": "23:59",
-      "hasMap": "https://maps.app.goo.gl/QJFVN7XUenr81ci86"
+      }
     }
     </script>
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo"><a href="/">SURYA PLAZA</a></div>
-            <nav class="main-nav">
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">SURYA PLAZA</a>
+            <nav class="site-nav">
                 <ul>
+                    <li class="mobile-only-booking"><a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="button">Book Now</a></li>
                     <li><a href="/rooms">Rooms</a></li>
                     <li><a href="/dining">Restaurants</a></li>
                     <li><a href="/events">Events</a></li>
@@ -65,95 +55,260 @@
                     <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="header-controls">
-                <div class="theme-switcher"><button id="theme-toggle" title="Change theme" aria-label="Change theme"><svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.591a.75.75 0 11-1.06-1.06l1.591-1.591a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75-.75zM17.834 18.894a.75.75 0 01-1.06 0l-1.591-1.591a.75.75 0 111.06-1.06l1.591 1.591a.75.75 0 010 1.06zM12 21.75a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0V21a.75.75 0 01-.75-.75zM5.106 17.834a.75.75 0 010-1.06l1.591-1.591a.75.75 0 011.06 1.06l-1.591 1.591a.75.75 0 01-1.06 0zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 011.06 0l1.591 1.591a.75.75 0 01-1.06 1.06L6.106 6.166a.75.75 0 010-1.06z"/></svg><svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.472-.948.75.75 0 01.98.98A10.503 10.503 0 0112 21a10.5 10.5 0 01-10.5-10.5c0-4.368 2.667-8.112 6.46-9.774a.75.75 0 01.818.162z" clip-rule="evenodd" /></svg></button></div>
-                <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Now</a>
-                <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="button desktop-only-booking">Book Now</a>
+                <button class="menu-toggle" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <picture class="hero-background"><source srcset="assets/images/webp/hero-background.webp" type="image/webp"><img src="assets/images/jpg/hero-background.jpg" alt="Elegant exterior view of Surya Plaza Hotel at dusk"></picture>
-            <div class="hero-overlay"></div>
-            <div class="hero-content"><h1>A Legacy of Comfort and Excellence</h1><p>Exceptional hospitality in the heart of Sahibganj for travelers, professionals, and families.</p></div>
+        <section class="hero-section">
+            <div class="container fade-in">
+                <h1>A Legacy of Comfort and Excellence</h1>
+                <p>Exceptional hospitality in the heart of Sahibganj for travelers, professionals, and families.</p>
+            </div>
         </section>
 
-        <section class="story-section">
-            <div class="container story-container">
-                <div class="story-image"><picture><source srcset="assets/images/webp/hotel-lobby.webp" type="image/webp"><img src="assets/images/jpg/hotel-lobby.jpg" alt="The warm and inviting lobby of Surya Plaza Hotel." loading="lazy"></picture></div>
-                <div class="story-content section-title">
-                    <h2>Our Story</h2>
-                    <p>Surya Plaza Hotel was founded with a vision to provide exceptional hospitality in Sahibganj. Inspired by our years of experience in patient care, we extended our philosophy to the hospitality sector, ensuring every guest experiences warmth, comfort, and impeccable service.</p>
-                    <div class="section-cta"><a href="/about" class="btn-secondary">Learn More</a></div>
+        <!-- NEW: "Our Commitment" Section -->
+        <section class="commitment-section">
+            <div class="container">
+                <div class="section-title fade-in">
+                    <h2>Our Commitment to Your Comfort</h2>
+                    <p>We are dedicated to providing an exceptional stay, distinguished by the following conveniences.</p>
+                </div>
+                <div class="commitment-grid grid-stagger">
+                    <div class="commitment-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/></svg>
+                        <h4>Spacious Accommodations</h4>
+                        <p>Well-appointed rooms, suites, and apartments, many featuring private balconies and river views.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75zM12 2.25c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z"/></svg>
+                        <h4>Renowned Dining</h4>
+                        <p>Home to the famous Moti Mahal restaurant, serving authentic Indian and Chinese cuisine.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <h4>Central Location</h4>
+                        <p>Conveniently located near the railway station, steamer ghat, and local markets.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                        <h4>Modern Amenities</h4>
+                        <p>Enjoy complimentary high-speed Wi-Fi, 24/7 room service, and individual climate control in every room.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <section class="story-section">
+            <div class="container grid-two-col">
+                <div class="story-image fade-in">
+                    <picture>
+                        <source srcset="assets/images/hotel-exterior.webp" type="image/webp">
+                        <img src="assets/images/hotel-exterior.jpg" alt="Front exterior view of the Surya Plaza Hotel building." loading="lazy">
+                    </picture>
+                </div>
+                <div class="story-content fade-in">
+                    <h2>Our Story</h2>
+                    <p>Surya Plaza Hotel was founded with a clear vision: to provide a standard of hospitality in Sahibganj built on genuine warmth and impeccable service. Our commitment is to ensure every guest—whether traveling for business, leisure, or with family—experiences a stay that is both comfortable and memorable.</p>
+                    <a href="/about" class="button-outline">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- UPDATED: Accommodations Section with all 6 rooms -->
         <section class="accommodations-section">
             <div class="container">
-                <div class="section-title"><h2>Our Accommodations</h2><p>A selection of rooms and suites designed for comfort and functionality.</p></div>
-                <div class="accommodations-grid">
-                    <div class="room-card"><picture><source srcset="assets/images/webp/room-executive.webp" type="image/webp"><img src="assets/images/jpg/room-executive.jpg" alt="Spacious Executive Room with a private balcony" loading="lazy"></picture><div class="room-card-content"><h3>Executive Room</h3><p class="room-card-description">A larger 220 sqft room featuring a king-size bed and private balcony.</p><div class="room-card-price">Starts from <strong>₹2,199</strong> / night</div></div></div>
-                    <div class="room-card"><picture><source srcset="assets/images/webp/room-suite.webp" type="image/webp"><img src="assets/images/jpg/room-suite.jpg" alt="Luxurious Suite with a separate living area" loading="lazy"></picture><div class="room-card-content"><h3>Suites</h3><p class="room-card-description">Indulge in a spacious suite with a separate living area and scenic hill views.</p><div class="room-card-price">Starts from <strong>₹2,699</strong> / night</div></div></div>
-                    <div class="room-card"><picture><source srcset="assets/images/webp/room-family-apartment.webp" type="image/webp"><img src="assets/images/jpg/room-family-apartment.jpg" alt="Family Apartment with a fully equipped kitchen" loading="lazy"></picture><div class="room-card-content"><h3>Family Apartment</h3><p class="room-card-description">Our largest unit, offering two bedrooms and a full kitchen for extended stays.</p><div class="room-card-price">Starts from <strong>₹4,999</strong> / night</div></div></div>
+                <div class="section-title fade-in">
+                    <h2>A Room for Every Journey</h2>
+                    <p>Our selection of rooms, suites, and apartments are thoughtfully designed for comfort and functionality.</p>
                 </div>
-                <div class="section-cta"><a href="/rooms" class="btn-secondary">Explore All Rooms & Suites</a></div>
+                <div class="accommodations-grid grid-stagger">
+                    <article class="room-card">
+                        <picture><img src="assets/images/rooms/exec-room.jpg" alt="A well-appointed Club Comfort Room" loading="lazy"></picture>
+                        <div class="room-card-content">
+                            <h3>Club Comfort Room</h3>
+                            <p>An efficient 150 sqft space designed for the modern traveler, offering comfort and convenience.</p>
+                            <ul class="room-features">
+                                <li>150 sqft</li>
+                                <li>Double Bed</li>
+                            </ul>
+                            <div class="room-card-price">Starts from <strong>₹1,599</strong> / night</div>
+                        </div>
+                    </article>
+                    <article class="room-card">
+                        <picture><img src="assets/images/rooms/exec-room.jpg" alt="A Deluxe Room with a private balcony" loading="lazy"></picture>
+                        <div class="room-card-content">
+                            <h3>Deluxe Balcony Room</h3>
+                            <p>An inviting 180 sqft room featuring the added amenity of a private balcony for fresh air and relaxation.</p>
+                             <ul class="room-features">
+                                <li>180 sqft</li>
+                                <li>Private Balcony</li>
+                            </ul>
+                            <div class="room-card-price">Starts from <strong>₹1,899</strong> / night</div>
+                        </div>
+                    </article>
+                    <article class="room-card">
+                        <picture><img src="assets/images/rooms/exec-room.jpg" alt="Spacious Executive Room with a seating area" loading="lazy"></picture>
+                        <div class="room-card-content">
+                            <h3>Executive Balcony Room</h3>
+                            <p>A larger 220 sqft room with a sofa, offering additional space for work or leisure, plus a private balcony.</p>
+                             <ul class="room-features">
+                                <li>220 sqft</li>
+                                <li>Sofa & Balcony</li>
+                            </ul>
+                            <div class="room-card-price">Starts from <strong>₹2,199</strong> / night</div>
+                        </div>
+                    </article>
+                    <article class="room-card">
+                        <picture><img src="assets/images/rooms/junior-suite.jpg" alt="A Junior Suite with a separate living area" loading="lazy"></picture>
+                        <div class="room-card-content">
+                            <h3>Junior Balcony Suite</h3>
+                            <p>A 234 sqft suite with a separate living area, providing distinct spaces for relaxation and sleep.</p>
+                            <ul class="room-features">
+                                <li>234 sqft</li>
+                                <li>Separate Living Area</li>
+                            </ul>
+                            <div class="room-card-price">Starts from <strong>₹2,699</strong> / night</div>
+                        </div>
+                    </article>
+                    <article class="room-card">
+                        <picture><img src="assets/images/rooms/junior-suite.jpg" alt="The expansive Two-Bedroom Premium Suite" loading="lazy"></picture>
+                        <div class="room-card-content">
+                            <h3>Two-Bedroom Premium Suite</h3>
+                            <p>An expansive 700 sqft suite with two bedrooms, a drawing room, and balconies with serene river views.</p>
+                            <ul class="room-features">
+                                <li>700 sqft</li>
+                                <li>2 Bedrooms & River View</li>
+                            </ul>
+                            <div class="room-card-price">Starts from <strong>₹3,999</strong> / night</div>
+                        </div>
+                    </article>
+                    <article class="room-card">
+                        <picture><img src="assets/images/rooms/family-apartment.jpg" alt="Family Apartment with a fully equipped kitchen" loading="lazy"></picture>
+                        <div class="room-card-content">
+                            <h3>Family Apartment with Kitchen</h3>
+                            <p>Our largest unit at 800 sqft, offering two bedrooms, a kitchen, and views of the river and hills.</p>
+                            <ul class="room-features">
+                                <li>800 sqft</li>
+                                <li>Full Kitchen</li>
+                            </ul>
+                            <div class="room-card-price">Starts from <strong>₹4,999</strong> / night</div>
+                        </div>
+                    </article>
+                </div>
+                <div class="section-cta fade-in">
+                    <a href="/rooms" class="button-outline">Explore All Rooms & Suites</a>
+                </div>
             </div>
         </section>
         
         <section class="dining-section">
-            <picture class="section-background"><source srcset="assets/images/webp/dining-background.webp" type="image/webp"><img src="assets/images/jpg/dining-background.jpg" alt="A collage of beautifully prepared dishes from the hotel's restaurants" loading="lazy"></picture>
-            <div class="section-overlay"></div>
-            <div class="container section-content">
-                <div class="section-title"><h2 class="light-text">Restaurants</h2><p class="light-text">From our renowned Moti Mahal to the casual Jackson Diner, explore our culinary offerings.</p></div>
-                <div class="dining-options">
-                    <div class="dining-item"><h3>Moti Mahal Tandoori Trail</h3><p>Our signature restaurant serving an iconic menu of authentic North Indian cuisine.</p></div>
-                    <div class="dining-item"><h3>Jackson Diner By Moti Mahal</h3><p>A casual dining venue offering a diverse menu in a relaxed and welcoming atmosphere.</p></div>
+            <div class="container">
+                <div class="section-title fade-in">
+                    <h2>Restaurants</h2>
+                    <p>From the renowned Moti Mahal to the casual Jackson Diner, explore our culinary offerings.</p>
                 </div>
-                <div class="section-cta"><a href="/dining" class="btn-primary">View Menus & Details</a></div>
+                <div class="dining-grid grid-stagger">
+                    <div class="dining-card">
+                        <h3>Moti Mahal Tandoori Trail</h3>
+                        <p>Our signature restaurant serving an iconic menu of authentic North Indian cuisine.</p>
+                    </div>
+                    <div class="dining-card">
+                        <h3>Jackson Diner By Moti Mahal</h3>
+                        <p>A casual dining venue offering a diverse menu in a relaxed and welcoming atmosphere.</p>
+                    </div>
+                </div>
+                <div class="section-cta fade-in">
+                    <a href="/dining" class="button">View Menus & Details</a>
+                </div>
             </div>
         </section>
 
-        <section class="events-section">
+
+        <section class="dining-section">
             <div class="container">
-                <div class="section-title"><h2>Pearl Banquet</h2><p>Discover the perfect multi-functional banquet and conference hall to celebrate your event in style.</p></div>
-                <div class="events-image-placeholder"><picture><source srcset="assets/images/webp/events-hall.webp" type="image/webp"><img src="assets/images/jpg/events-hall.jpg" alt="The Pearl Banquet hall elegantly set up for a celebration" loading="lazy"></picture></div>
-                <div class="section-cta"><a href="/events" class="btn-secondary">Learn More About Our Venues</a></div>
+                <div class="section-title fade-in">
+                    <h2>Restaurants</h2>
+                    <p>From our renowned Moti Mahal to the casual Jackson Diner, explore our culinary offerings.</p>
+                </div>
+                <div class="dining-grid grid-stagger">
+                    <div class="dining-card">
+                        <h3>Moti Mahal Tandoori Trail</h3>
+                        <p>Our signature restaurant serving an iconic menu of authentic North Indian cuisine.</p>
+                    </div>
+                    <div class="dining-card">
+                        <h3>Jackson Diner By Moti Mahal</h3>
+                        <p>A casual dining venue offering a diverse menu in a relaxed and welcoming atmosphere.</p>
+                    </div>
+                </div>
+                <div class="section-cta fade-in">
+                    <a href="/dining" class="button">View Menus & Details</a>
+                </div>
             </div>
         </section>
 
         <section class="attractions-section">
             <div class="container">
-                <div class="section-title"><h2>Explore Sahibganj</h2><p>Our central location provides convenient access to the region's notable attractions.</p></div>
-                <div class="attractions-grid">
-                    <div class="attraction-card"><picture><source srcset="assets/images/webp/attraction-moti-jharna.webp" type="image/webp"><img src="assets/images/jpg/attraction-moti-jharna.jpg" alt="The scenic Moti Jharna waterfalls surrounded by lush greenery" loading="lazy"></picture><h3>Moti Jharna</h3></div>
-                    <div class="attraction-card"><picture><source srcset="assets/images/webp/attraction-shivgadi-dham.webp" type="image/webp"><img src="assets/images/jpg/attraction-shivgadi-dham.jpg" alt="The ancient and revered Shivgadi Dham temple" loading="lazy"></picture><h3>Shivgadi Temple</h3></div>
-                    <div class="attraction-card"><picture><source srcset="assets/images/webp/attraction-jama-masjid.webp" type="image/webp"><img src="assets/images/jpg/attraction-jama-masjid.jpg" alt="The impressive architecture of Jama Masjid in Sahibganj" loading="lazy"></picture><h3>Jama Masjid</h3></div>
+                <div class="section-title fade-in">
+                    <h2>Explore Sahibganj</h2>
+                    <p>Our central location provides convenient access to the region's notable attractions.</p>
                 </div>
-                <div class="section-cta"><a href="/attractions" class="btn-secondary">Discover the Area</a></div>
+                <div class="attractions-grid grid-stagger">
+                    <a href="#" class="attraction-card">
+                        <figure>
+                            <img src="assets/images/jpg/attraction-moti-jharna.jpg" alt="The scenic Moti Jharna waterfalls surrounded by lush greenery" loading="lazy">
+                            <figcaption>Moti Jharna</figcaption>
+                        </figure>
+                    </a>
+                    <a href="#" class="attraction-card">
+                        <figure>
+                            <img src="assets/images/jpg/attraction-shivgadi-dham.jpg" alt="The ancient and revered Shivgadi Dham temple" loading="lazy">
+                            <figcaption>Shivgadi Temple</figcaption>
+                        </figure>
+                    </a>
+                    <a href="#" class="attraction-card">
+                        <figure>
+                            <img src="assets/images/jpg/attraction-jama-masjid.jpg" alt="The impressive architecture of Jama Masjid in Sahibganj" loading="lazy">
+                            <figcaption>Jama Masjid</figcaption>
+                        </figure>
+                    </a>
+                </div>
+                <div class="section-cta fade-in">
+                    <a href="/attractions" class="button-outline">Discover the Area</a>
+                </div>
             </div>
         </section>
 
-        <!-- Final, High-Conversion CTA -->
-        <section class="contact-cta">
-            <div class="container">
+        <section class="cta-section">
+            <div class="container fade-in">
                 <h2>Your Stay Awaits</h2>
                 <p>Allow us to make your visit to Sahibganj truly memorable. Contact our reservations team directly for the best rates and personalized service.</p>
-                <div class="contact-methods">
-                    <a href="/contact" class="btn-secondary">Contact Us Directly</a>
-                    <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="btn-secondary">Book Online</a>
+                <div class="cta-actions">
+                    <a href="/contact" class="button-outline">Contact Us</a>
+                    <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="button">Book Online</a>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <footer class="main-footer">
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                 <div class="footer-column" id="footer-about"><h4>SURYA PLAZA HOTEL</h4><p>Opposite Ray Bahadur Building,<br>J.N.Roy Road, Sahibganj – 816109.<br>Jharkhand. India.</p></div>
+                <div class="footer-column">
+                    <h4>SURYA PLAZA HOTEL</h4>
+                    <p>Opposite Ray Bahadur Building,<br>J.N.Roy Road, Sahibganj – 816109.<br>Jharkhand. India.</p>
+                </div>
                 <div class="footer-column">
                     <h4>Navigate</h4>
                     <ul>
@@ -180,7 +335,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> Surya Plaza Hotel. All Rights Reserved.</p>
+                <p>&copy; 2025 Surya Plaza Hotel. All Rights Reserved.</p>
             </div>
         </div>
     </footer>

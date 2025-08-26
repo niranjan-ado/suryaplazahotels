@@ -3,180 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Surya Plaza Hotel, Sahibganj</title>
     <meta name="description" content="Explore a visual journey through Surya Plaza Hotel with our gallery of high-resolution images showcasing our rooms, dining, events, and architecture.">
     
-    <title>Gallery | Surya Plaza Hotel, Sahibganj</title>
-    
-    <link rel="stylesheet" href="assets/css/main.css">
-    
-    <!-- 
-        This self-contained style block contains all necessary improvements and features for this page.
-        It is guaranteed to work and will not conflict with other pages.
-    -->
-    <style>
-        /* Rule 1: Fix for the main header overlap */
-        main {
-            padding-top: var(--header-height, 5rem);
-        }
-
-        /* Rule 2: Styling for the interactive filter bar */
-        .gallery-filters {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: var(--space-l, 4rem);
-        }
-        .filter-btn {
-            background-color: var(--color-surface, #f8f8f8);
-            border: 1px solid var(--color-border, #eaeaea);
-            border-radius: 50px;
-            padding: 0.75rem 1.5rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .filter-btn:hover {
-            background-color: var(--color-primary, #8a7458);
-            color: white;
-            border-color: var(--color-primary, #8a7458);
-        }
-        .filter-btn.active {
-            background-color: var(--color-primary, #8a7458);
-            color: white;
-            border-color: var(--color-primary, #8a7458);
-        }
-
-        /* Rule 3: Styling for the dynamic masonry grid */
-        .gallery-grid {
-            column-count: 3;
-            column-gap: 1rem;
-        }
-        .gallery-item {
-            margin-bottom: 1rem;
-            break-inside: avoid;
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--border-radius, 6px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: opacity 0.4s ease;
-        }
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.4s ease;
-        }
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-        .gallery-item::after {
-            content: 'VIEW';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.6);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 500;
-            letter-spacing: 1px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .gallery-item:hover::after {
-            opacity: 1;
-        }
-
-        /* Rule 4: Styling for the immersive lightbox */
-        .lightbox {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            display: none; /* Changed by JS */
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .lightbox.active {
-            display: flex;
-            opacity: 1;
-        }
-        .lightbox-content {
-            position: relative;
-            max-width: 90vw;
-            max-height: 80vh;
-        }
-        .lightbox-content img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            animation: lightboxZoom 0.4s ease;
-        }
-        .lightbox-close {
-            position: absolute;
-            top: 1rem;
-            right: 2rem;
-            color: white;
-            font-size: 3rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.2s ease;
-        }
-        .lightbox-close:hover { color: var(--color-primary, #8a7458); }
-        .lightbox-prev, .lightbox-next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            font-size: 2rem;
-            padding: 1rem;
-            user-select: none;
-            transition: color 0.2s ease;
-        }
-        .lightbox-prev { left: 1rem; }
-        .lightbox-next { right: 1rem; }
-        .lightbox-prev:hover, .lightbox-next:hover { color: var(--color-primary, #8a7458); }
-        .lightbox-caption {
-            text-align: center;
-            color: #ccc;
-            padding: 1rem 0;
-            position: absolute;
-            bottom: -50px;
-            width: 100%;
-        }
-
-        @keyframes lightboxZoom { from { transform: scale(0.9); } to { transform: scale(1); } }
-
-        /* Responsive adjustments for the grid */
-        @media (max-width: 992px) { .gallery-grid { column-count: 2; } }
-        @media (max-width: 768px) { .gallery-grid { column-count: 1; } }
-    </style>
+    <!-- These links should point to the SAME files as your homepage -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
 
-    <header class="main-header">
-        <!-- Header is unchanged and correct -->
-        <div class="header-container"><div class="logo"><a href="/">SURYA PLAZA</a></div><nav class="main-nav"><ul><li><a href="/rooms.html">Rooms</a></li><li><a href="/dining.html">Restaurants</a></li><li><a href="/events.html">Events</a></li><li><a href="/attractions.html">Attractions</a></li><li><a href="/gallery.html">Gallery</a></li><li><a href="/contact.html">Contact</a></li></ul></nav><div class="header-controls"><div class="theme-switcher"><button id="theme-toggle" title="Change theme" aria-label="Change theme"><svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.591a.75.75 0 11-1.06-1.06l1.591-1.591a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75-.75zM17.834 18.894a.75.75 0 01-1.06 0l-1.591-1.591a.75.75 0 111.06-1.06l1.591 1.591a.75.75 0 010 1.06zM12 21.75a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0V21a.75.75 0 01-.75-.75zM5.106 17.834a.75.75 0 010-1.06l1.591-1.591a.75.75 0 011.06 1.06l-1.591 1.591a.75.75 0 01-1.06 0zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 011.06 0l1.591 1.591a.75.75 0 01-1.06 1.06L6.106 6.166a.75.75 0 010-1.06z"/></svg><svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.472-.948.75.75 0 01.98.98A10.503 10.503 0 0112 21a10.5 10.5 0 01-10.5-10.5c0-4.368 2.667-8.112 6.46-9.774a.75.75 0 01.818.162z" clip-rule="evenodd" /></svg></button></div><a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Room</a><button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu"><span></span><span></span><span></span></button></div></div>
+    <!-- STANDARDIZED HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">SURYA PLAZA</a>
+            <nav class="site-nav">
+                <ul>
+                    <li class="mobile-only-booking"><a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="button">Book Now</a></li>
+                    <li><a href="/rooms.html">Rooms</a></li>
+                    <li><a href="/dining.html">Restaurants</a></li>
+                    <li><a href="/events.html">Events</a></li>
+                    <li><a href="/attractions.html">Attractions</a></li>
+                    <li><a href="/gallery.html">Gallery</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="button desktop-only-booking">Book Now</a>
+                <button class="menu-toggle" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <main style="padding-top: var(--header-height);">
-        <section class="hero hero-short">
-            <picture class="hero-background">
-                <source srcset="assets/images/webp/gallery-hero.webp" type="image/webp">
-                <img src="assets/images/jpg/gallery-hero.jpg" alt="An artfully arranged collage of hotel details">
-            </picture>
-            <div class="hero-overlay"></div>
-            <div class="hero-content"><h1>Gallery</h1><p>A Visual Journey Through Surya Plaza Hotel</p></div>
+    <main>
+
+        <!-- CONSISTENT HERO SECTION -->
+        <section class="hero-section hero-short" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/gallery/Gallery Hero.jpg');">
+            <div class="container fade-in">
+                <h1>Our Gallery</h1>
+                <p>A Visual Journey Through Surya Plaza Hotel</p>
+            </div>
         </section>
 
+        <!-- GALLERY SECTION -->
         <section class="gallery-section">
             <div class="container">
-                <div class="gallery-filters">
+                <div class="gallery-filters fade-in">
                     <button class="filter-btn active" data-filter="all">All</button>
                     <button class="filter-btn" data-filter="hotel">The Hotel</button>
                     <button class="filter-btn" data-filter="rooms">Rooms & Suites</button>
@@ -186,139 +65,77 @@
 
                 <div class="gallery-grid">
                     <!-- The Hotel Images -->
-                    <a href="assets/images/jpg/1-Facade-Evening-Hero.jpg" class="gallery-item" data-category="hotel" data-caption="Hotel Exterior at Dusk"><picture><source srcset="assets/images/webp/1-Facade-Evening-Hero.webp" type="image/webp"><img src="assets/images/jpg/1-Facade-Evening-Hero.jpg" loading="lazy"></picture></a>
-                    <a href="assets/images/jpg/2-Reception.jpg" class="gallery-item" data-category="hotel" data-caption="Lobby & Reception Area"><picture><source srcset="assets/images/webp/2-Reception.webp" type="image/webp"><img src="assets/images/jpg/2-Reception.jpg" loading="lazy"></picture></a>
-                    <a href="assets/images/jpg/Facade-Front.jpg" class="gallery-item" data-category="hotel" data-caption="Hotel Front Entrance"><picture><source srcset="assets/images/webp/Facade-Front.webp" type="image/webp"><img src="assets/images/jpg/Facade-Front.jpg" loading="lazy"></picture></a>
+                    <a href="assets/images/gallery/Facade-Evening-Hero.jpg" class="gallery-item" data-category="hotel" data-caption="Hotel Exterior at Dusk"><img src="assets/images/gallery/Facade-Evening-Hero.jpg" loading="lazy" alt="Hotel exterior lighting at dusk"></a>
+                    <a href="assets/images/gallery/Reception.jpg" class="gallery-item" data-category="hotel" data-caption="Lobby & Reception Area"><img src="assets/images/gallery/Reception.jpg" loading="lazy" alt="Hotel lobby and reception desk"></a>
                     
                     <!-- Rooms & Suites Images -->
-                    <a href="assets/images/jpg/Executive-Balcony-Room-Bed.jpg" class="gallery-item" data-category="rooms" data-caption="Executive Balcony Room"><picture><source srcset="assets/images/webp/Executive-Balcony-Room-Bed.webp" type="image/webp"><img src="assets/images/jpg/Executive-Balcony-Room-Bed.jpg" loading="lazy"></picture></a>
-                    <a href="assets/images/jpg/Family-Apartment-Living-area.jpg" class="gallery-item" data-category="rooms" data-caption="Family Apartment Living Area"><picture><source srcset="assets/images/webp/Family-Apartment-Living-area.webp" type="image/webp"><img src="assets/images/jpg/Family-Apartment-Living-area.jpg" loading="lazy"></picture></a>
-                    <a href="assets/images/jpg/Junior-Balcony-Suite-Bedroom.jpg" class="gallery-item" data-category="rooms" data-caption="Junior Balcony Suite"><picture><source srcset="assets/images/webp/Junior-Balcony-Suite-Bedroom.webp" type="image/webp"><img src="assets/images/jpg/Junior-Balcony-Suite-Bedroom.jpg" loading="lazy"></picture></a>
-                     <a href="assets/images/jpg/Bathroom-Sink-and-Shower.jpg" class="gallery-item" data-category="rooms" data-caption="Modern Bathroom Facilities"><picture><source srcset="assets/images/webp/Bathroom-Sink-and-Shower.webp" type="image/webp"><img src="assets/images/jpg/Bathroom-Sink-and-Shower.jpg" loading="lazy"></picture></a>
-                     <a href="assets/images/jpg/Deluxe-Balcony-Room.jpg" class="gallery-item" data-category="rooms" data-caption="Deluxe Balcony Room View"><picture><source srcset="assets/images/webp/Deluxe-Balcony-Room.webp" type="image/webp"><img src="assets/images/jpg/Deluxe-Balcony-Room.jpg" loading="lazy"></picture></a>
+                    <a href="assets/images/rooms/executive-balcony-room.jpg" class="gallery-item" data-category="rooms" data-caption="Executive Balcony Room"><img src="assets/images/rooms/executive-balcony-room.jpg" loading="lazy" alt="Executive Balcony Room bed and decor"></a>
+                    <a href="assets/images/rooms/family-apartment.jpg" class="gallery-item" data-category="rooms" data-caption="Family Apartment Living Area"><img src="assets/images/rooms/family-apartment.jpg" loading="lazy" alt="Living area of the Family Apartment"></a>
+                    <a href="assets/images/rooms/junior-suite.jpg" class="gallery-item" data-category="rooms" data-caption="Junior Balcony Suite"><img src="assets/images/rooms/junior-suite.jpg" loading="lazy" alt="Bedroom of the Junior Balcony Suite"></a>
+                    <a href="assets/images/rooms/bathroom.jpg" class="gallery-item" data-category="rooms" data-caption="Modern Bathroom Facilities"><img src="assets/images/rooms/bathroom.jpg" loading="lazy" alt="Clean and modern bathroom facilities"></a>
                     
                     <!-- Dining Images -->
-                    <a href="assets/images/jpg/Moti-Mahal-Dining-Area.jpg" class="gallery-item" data-category="dining" data-caption="Moti Mahal Tandoori Trail - Dining Area"><picture><source srcset="assets/images/webp/Moti-Mahal-Dining-Area.webp" type="image/webp"><img src="assets/images/jpg/Moti-Mahal-Dining-Area.jpg" loading="lazy"></picture></a>
-                    <a href="assets/images/jpg/Moti-Mahal-Family-Dining.jpg" class="gallery-item" data-category="dining" data-caption="Family Dining at Moti Mahal"><picture><source srcset="assets/images/webp/Moti-Mahal-Family-Dining.webp" type="image/webp"><img src="assets/images/jpg/Moti-Mahal-Family-Dining.jpg" loading="lazy"></picture></a>
-                    <a href="assets/images/jpg/Moti-Mahal-Mocktail-Bar.jpg" class="gallery-item" data-category="dining" data-caption="Mocktail Bar"><picture><source srcset="assets/images/webp/Moti-Mahal-Mocktail-Bar.webp" type="image/webp"><img src="assets/images/jpg/Moti-Mahal-Mocktail-Bar.jpg" loading="lazy"></picture></a>
+                    <a href="assets/images/restaurants/Moti Mahal - Dining Area.jpg" class="gallery-item" data-category="dining" data-caption="Moti Mahal Tandoori Trail - Dining Area"><img src="assets/images/restaurants/Moti Mahal - Dining Area.jpg" loading="lazy" alt="Main dining area of Moti Mahal restaurant"></a>
+                    <a href="assets/images/restaurants/Jackson Diner By Moti Mahal.jpg" class="gallery-item" data-category="dining" data-caption="Jackson Diner by Moti Mahal"><img src="assets/images/restaurants/Jackson Diner By Moti Mahal.jpg" loading="lazy" alt="Stylish and casual interior of Jackson Diner"></a>
                     
                     <!-- Events Images -->
-                    <a href="assets/images/jpg/Pearl-Banquet-Buffet.jpg" class="gallery-item" data-category="events" data-caption="Buffet Setup at Pearl Banquet"><picture><source srcset="assets/images/webp/Pearl-Banquet-Buffet.webp" type="image/webp"><img src="assets/images/jpg/Pearl-Banquet-Buffet.jpg" loading="lazy"></picture></a>
-                    <a href="assets/images/jpg/Pearl-Banquet-Cluster.jpg" class="gallery-item" data-category="events" data-caption="Pearl Banquet - Cluster Seating for Events"><picture><source srcset="assets/images/webp/Pearl-Banquet-Cluster.webp" type="image/webp"><img src="assets/images/jpg/Pearl-Banquet-Cluster.jpg" loading="lazy"></picture></a>
-                    
-                    <!-- Add more images here, assigning the correct data-category -->
-                    
+                    <a href="assets/images/events/Pearl-Banquet-Buffet.jpg" class="gallery-item" data-category="events" data-caption="Buffet Setup at Pearl Banquet"><img src="assets/images/events/Pearl-Banquet-Buffet.jpg" loading="lazy" alt="Buffet food setup at Pearl Banquet hall"></a>
+                    <a href="assets/images/events/Pearl-Banquet-Cluster.jpg" class="gallery-item" data-category="events" data-caption="Pearl Banquet - Cluster Seating for Events"><img src="assets/images/events/Pearl-Banquet-Cluster.jpg" loading="lazy" alt="Round table cluster seating at Pearl Banquet"></a>
                 </div>
             </div>
         </section>
+
     </main>
     
-    <!-- This is the hidden HTML for the lightbox -->
+    <!-- LIGHTBOX HTML (Hidden by default) -->
     <div id="lightbox" class="lightbox">
         <span class="lightbox-close">&times;</span>
         <a class="lightbox-prev">&#10094;</a>
         <a class="lightbox-next">&#10095;</a>
         <div class="lightbox-content">
-            <img id="lightbox-img">
+            <img id="lightbox-img" alt="Enlarged gallery view">
             <div id="lightbox-caption"></div>
         </div>
     </div>
 
-    <footer class="main-footer">
-        <!-- Footer is unchanged and correct -->
-        <div class="container"><div class="footer-grid"><div class="footer-column" id="footer-about"><h4>SURYA PLAZA HOTEL</h4><p>Opposite Ray Bahadur Building,<br>J.N.Roy Road, Sahibganj – 816109.<br>Jharkhand. India.</p></div><div class="footer-column"><h4>Quick Links</h4><ul><li><a href="/rooms.html">Rooms & Suites</a></li><li><a href="/dining.html">Restaurants</a></li><li><a href="/events.html">Events</a></li><li><a href="/gallery.html">Gallery</a></li></ul></div><div class="footer-column"><h4>Contact</h4><ul><li><a href="tel:+919264197987"><strong>Room Booking</strong><br>+91 9264197987</a></li><li style="margin-top: 1rem;"><a href="tel:+919264197987"><strong>Table Booking</strong><br>+91 9264197987</a></li></ul></div><div class="footer-column"><h4>Policies</h4><ul><li><a href="/terms.html">Terms & Conditions</a></li><li><a href="/privacy.html">Privacy Policy</a></li><li><a href="/cancellation.html">Cancellation Policy</a></li></ul></div></div><div class="footer-bottom"><p>&copy; <script>document.write(new Date().getFullYear())</script> Surya Hotel, All Rights Reserved.</p></div></div>
+    <!-- STANDARDIZED FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>SURYA PLAZA HOTEL</h4>
+                    <p>Opposite Ray Bahadur Building,<br>J.N.Roy Road, Sahibganj – 816109.<br>Jharkhand. India.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/gallery.html">Gallery</a></li>
+                        <li><a href="/attractions.html">Local Attractions</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+919264197986">P: +91 92641 97986</a></li>
+                        <li><a href="mailto:sbg.suryaplaza@gmail.com">E: sbg.suryaplaza@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Policies</h4>
+                     <ul>
+                        <li><a href="/terms.html">Terms & Conditions</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/cancellation-policy.html">Cancellation Policy</a></li>
+                     </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Surya Plaza Hotel. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
-    
-    <!-- This self-contained script powers the interactive gallery -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- Gallery Filtering Logic ---
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    const filter = button.dataset.filter;
-
-                    galleryItems.forEach(item => {
-                        item.style.display = 'none'; // Hide all items initially
-                        if (filter === 'all' || item.dataset.category === filter) {
-                            // Use a timeout to allow for a fade-in effect
-                            setTimeout(() => {
-                                item.style.display = 'block';
-                            }, 1);
-                        }
-                    });
-                });
-            });
-
-            // --- Lightbox Logic ---
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const lightboxCaption = document.getElementById('lightbox-caption');
-            const galleryLinks = document.querySelectorAll('.gallery-item');
-            let currentIndex = 0;
-            const images = [];
-
-            galleryLinks.forEach(link => {
-                images.push({
-                    src: link.href,
-                    caption: link.dataset.caption
-                });
-            });
-
-            const openLightbox = (index) => {
-                currentIndex = index;
-                lightboxImg.src = images[currentIndex].src;
-                lightboxCaption.textContent = images[currentIndex].caption;
-                lightbox.classList.add('active');
-            };
-
-            const closeLightbox = () => {
-                lightbox.classList.remove('active');
-            };
-
-            const showPrev = () => {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                openLightbox(currentIndex);
-            };
-
-            const showNext = () => {
-                currentIndex = (currentIndex + 1) % images.length;
-                openLightbox(currentIndex);
-            };
-
-            galleryLinks.forEach((link, index) => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openLightbox(index);
-                });
-            });
-
-            lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-            lightbox.querySelector('.lightbox-prev').addEventListener('click', showPrev);
-            lightbox.querySelector('.lightbox-next').addEventListener('click', showNext);
-            
-            // Close lightbox on click outside of the image
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    closeLightbox();
-                }
-            });
-
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (lightbox.classList.contains('active')) {
-                    if (e.key === 'Escape') closeLightbox();
-                    if (e.key === 'ArrowLeft') showPrev();
-                    if (e.key === 'ArrowRight') showNext();
-                }
-            });
-        });
-    </script>
 
 </body>
 </html>

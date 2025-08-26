@@ -3,295 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Jackson Diner by Moti Mahal | Surya Plaza Hotel</title>
     <meta name="description" content="The official table menu for Jackson Diner by Moti Mahal at Surya Plaza Hotel, featuring a fusion of Western and Indian specialties.">
     
-    <title>Menu - Jackson Diner by Moti Mahal | Surya Plaza Hotel</title>
-    
-    <!-- This page uses self-contained internal styles for a unique menu experience -->
-    <style>
-        /* --- FONT IMPORTS & GLOBAL SETUP --- */
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Poppins:wght@300;400;500&display=swap');
-
-        :root {
-            --font-primary: 'Cormorant Garamond', serif;
-            --font-secondary: 'Poppins', sans-serif;
-            --header-height: 5rem;
-            --color-primary: #8a7458;
-            --color-text: #222222;
-            --color-text-secondary: #555555;
-            --color-background: #ffffff;
-            --color-surface: #f8f8f8;
-            --color-border: #eAEAEA;
-            --space-m: 2rem;
-            --space-l: 4rem;
-        }
-
-        /* Basic Body Styles */
-        body {
-            font-family: var(--font-secondary);
-            background-color: var(--color-background);
-            color: var(--color-text);
-            margin: 0;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Menu Header */
-        .menu-header {
-            text-align: center;
-            padding: var(--space-l) var(--space-m);
-            background-color: var(--color-surface);
-        }
-        .menu-header h1 {
-            font-family: var(--font-primary);
-            font-size: 3rem;
-            margin: 0 0 0.5rem 0;
-        }
-        .menu-header p {
-            font-size: 1.1rem;
-            color: var(--color-text-secondary);
-            margin: 0;
-        }
-
-        /* Main Menu Layout */
-        .menu-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: var(--space-l) var(--space-m);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-l);
-        }
-
-        /* Individual Menu Section (e.g., Starters, Main Course) */
-        .menu-section {
-            break-inside: avoid;
-        }
-        
-        .menu-category-title {
-            font-family: var(--font-primary);
-            font-size: 2.2rem;
-            border-bottom: 2px solid var(--color-primary);
-            padding-bottom: 0.5rem;
-            margin-bottom: var(--space-m);
-        }
-
-        .menu-subcategory-title {
-            font-weight: 500;
-            color: var(--color-text);
-            font-size: 1.2rem;
-            margin: var(--space-m) 0 1.5rem 0;
-            border-bottom: 1px solid var(--color-border);
-            padding-bottom: 0.5rem;
-        }
-
-        /* Individual Menu Item */
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .item-details {
-            flex-grow: 1;
-        }
-        .item-name {
-            font-weight: 500;
-            margin: 0;
-            font-size: 1.1rem;
-        }
-        .item-description {
-            font-size: 0.9rem;
-            color: var(--color-text-secondary);
-            margin: 0.25rem 0 0 0;
-            line-height: 1.5;
-        }
-        
-        /* Note for sections like Burgers/Sandwiches */
-        .menu-note {
-            font-size: 0.85rem;
-            color: var(--color-text-secondary);
-            font-style: italic;
-            margin-top: var(--space-m);
-            border-top: 1px solid var(--color-border);
-            padding-top: 1rem;
-        }
-        
-        /* Parallax Visual Break */
-        .menu-parallax {
-            height: 300px;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            grid-column: 1 / -1;
-        }
-        .menu-parallax::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.4);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .menu-container {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-            .menu-section {
-                margin-bottom: var(--space-l);
-            }
-            .menu-parallax {
-                background-attachment: scroll;
-            }
-        }
-        
-        /* Header for consistency */
-        .main-header { position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height); z-index: 1000; background-color: rgba(255,255,255,0.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--color-border); }
-        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 100%; }
-        .logo a { font-family: var(--font-primary); font-size: 1.5rem; font-weight: 600; color: var(--color-text); text-decoration: none; }
-        .main-nav, .header-controls { display: none; }
-    </style>
+    <!-- These links should point to the SAME files as your homepage -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo">
-                <a href="/">SURYA PLAZA</a>
+    <!-- STANDARDIZED HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">SURYA PLAZA</a>
+            <nav class="site-nav">
+                <ul>
+                    <li class="mobile-only-booking"><a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="button">Book Now</a></li>
+                    <li><a href="/rooms.html">Rooms</a></li>
+                    <li><a href="/dining.html">Restaurants</a></li>
+                    <li><a href="/events.html">Events</a></li>
+                    <li><a href="/attractions.html">Attractions</a></li>
+                    <li><a href="/gallery.html">Gallery</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="button desktop-only-booking">Book Now</a>
+                <button class="menu-toggle" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
 
-    <main style="padding-top: var(--header-height);">
+    <main>
 
-        <section class="menu-header">
-            <h1>JD’S MENUS</h1>
-            <p>TABLE MENU</p>
+        <!-- MENU HERO SECTION -->
+        <section class="hero-section hero-short" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/restaurants/Jackson Diner Hero.jpg');">
+            <div class="container fade-in">
+                <h1>Jackson Diner Table Menu</h1>
+                <p>A Contemporary Fusion of Flavors</p>
+            </div>
         </section>
 
-        <div class="menu-container">
-            <!-- Column 1 -->
-            <div>
-                <div class="menu-section">
-                    <h2 class="menu-category-title">Beverages</h2>
-                    <h3 class="menu-subcategory-title">JD'S SPECIALITY MOCKTAILS</h3>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">FRUIT PUNCH</h4><p class="item-description">Mixed fruit juice - vanilla ice cream - fresh fruits</p></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">ORANGE FANTASY</h4><p class="item-description">Orange juice – strawberry crush – lime juice – mint</p></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MANGO MINT COOLER</h4><p class="item-description">Mango juice – mint syrup - carbonated water</p></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">STRAWBERRY SUNSET</h4><p class="item-description">Strawberry crush - lime - lemonade</p></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">VIRGIN MOJITO</h4><p class="item-description">Mint / Green Apple / Mango / Pineapple / Orange / Blueberry / etc.</p></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">ICE TEA</h4><p class="item-description">Lime / Peach</p></div></div>
+        <!-- MENU CONTENT SECTION -->
+        <section class="menu-page-section">
+            <div class="container">
+                <div class="menu-grid">
+                    
+                    <!-- LEFT COLUMN -->
+                    <div class="menu-column">
+                        <div class="menu-section fade-in">
+                            <h2 class="menu-category-title">Beverages</h2>
+                            <h3 class="menu-subcategory-title">JD'S SPECIALITY MOCKTAILS</h3>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">FRUIT PUNCH</h4><p class="item-description">Mixed fruit juice, vanilla ice cream, fresh fruits</p></div></div>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">VIRGIN MOJITO</h4><p class="item-description">Mint / Green Apple / Mango / Orange / Blueberry</p></div></div>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">ICE TEA</h4><p class="item-description">Lime / Peach</p></div></div>
+                        </div>
+                        
+                        <div class="menu-section fade-in">
+                            <h2 class="menu-category-title">Rolls</h2>
+                            <h3 class="menu-subcategory-title">NON-VEGETARIAN</h3>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">CHICKEN MALAI TIKKA ROLL</h4></div></div>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">MUTTON SEEKH KEBAB ROLL</h4></div></div>
+                            <h3 class="menu-subcategory-title">VEGETARIAN</h3>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">PANEER TIKKA ROLL</h4></div></div>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">TANDOORI SOYA CHAAP ROLL</h4></div></div>
+                        </div>
 
-                    <h3 class="menu-subcategory-title">NOURISHING BEVERAGES</h3>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">THICK SHAKES</h4><p class="item-description">Oreo / Kitkat / Nutella / M&M / Brownie</p></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MILK SHAKES</h4><p class="item-description">Mango / Vanilla / Chocolate / Strawberry / Blueberry</p></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">COLD COFFEE</h4><p class="item-description">With or Without Ice Cream</p></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">LASSI</h4><p class="item-description">Salted / Sweet</p></div></div>
-                </div>
+                        <div class="menu-section fade-in">
+                            <h2 class="menu-category-title">Burgers & Sandwiches</h2>
+                             <h3 class="menu-subcategory-title">SERVED WITH FRIES & HOUSE DIP</h3>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">CRUNCHY CHICKEN BURGER</h4></div></div>
+                             <div class="menu-item"><div class="item-details"><h4 class="item-name">KING CLUB SANDWICH (NON-VEG)</h4></div></div>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">CRUNCHY PANEER BURGER</h4></div></div>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">QUEEN CLUB SANDWICH (VEG)</h4></div></div>
+                        </div>
+                    </div> <!-- End Left Column -->
 
-                <div class="menu-section">
-                    <h2 class="menu-category-title">Rolls</h2>
-                    <h3 class="menu-subcategory-title">JD’S SPECIAL ROLLS (NON-VEGETARIAN)</h3>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CHICKEN MALAI TIKKA ROLL</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CHICKEN TIKKA ROLL</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MUTTON SEEKH KEBAB ROLL</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">EGG ROLL</h4></div></div>
-                    <h3 class="menu-subcategory-title">JD’S SPECIAL ROLLS (VEGETARIAN)</h3>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">PANEER TIKKA ROLL</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MUSHROOM TIKKA ROLL</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">TANDOORI SOYA CHAAP ROLL</h4></div></div>
-                </div>
+                    <!-- RIGHT COLUMN -->
+                    <div class="menu-column">
+                        <div class="menu-section fade-in">
+                            <h2 class="menu-category-title">Western Specialties</h2>
+                             <h3 class="menu-subcategory-title">NON-VEGETARIAN</h3>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">HERB CRUSTED FRIED CHICKEN</h4></div></div>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">BBQ CHICKEN WINGS</h4></div></div>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">PANKO FISH FINGER</h4></div></div>
+                            <h3 class="menu-subcategory-title">VEGETARIAN</h3>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">PERI PERI MOZZARELLA CHEESE FINGER</h4></div></div>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">CHEESE CORN CROQUETTES</h4></div></div>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">LOADED CHEESY FRIES</h4></div></div>
+                        </div>
 
-                <div class="menu-section">
-                    <h2 class="menu-category-title">Burgers</h2>
-                    <h3 class="menu-subcategory-title">JD’S SPECIALITY BURGERS</h3>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CRUNCHY CHICKEN BURGER</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MUTTON KEEMA BURGER</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CRUNCHY PANEER BURGER</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">VEGGIE BURGER</h4></div></div>
-                    <p class="menu-note">*All Burgers are accompanied with house dip & fries. Extra cheese and patties available.</p>
-                </div>
+                        <div class="menu-section fade-in">
+                            <h2 class="menu-category-title">Pizza & Pasta</h2>
+                            <h3 class="menu-subcategory-title">THIN CRUST PIZZA</h3>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">TANDOORI CHICKEN TIKKA</h4></div></div>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">TANDOORI PANEER TIKKA</h4></div></div>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">FARM HOUSE (VEG)</h4></div></div>
+                            <h3 class="menu-subcategory-title">PASTA ITALIANO</h3>
+                            <div class="menu-item"><div class="item-details"><h4 class="item-name">POLLO CON FUNGI (CHICKEN)</h4></div></div>
+                             <div class="menu-item"><div class="item-details"><h4 class="item-name">CLASSIC ARRABIATA (VEG)</h4></div></div>
+                        </div>
+                    </div> <!-- End Right Column -->
+                    
+                </div> <!-- End Menu Grid -->
+            </div>
+        </section>
 
-                 <div class="menu-section">
-                    <h2 class="menu-category-title">Western Specialties</h2>
-                    <h3 class="menu-subcategory-title">NON-VEGETARIAN</h3>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">HERB CRUSTED FRIED CHICKEN</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">BREADED CHICKEN FINGER</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">BBQ CHICKEN WINGS</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">PANKO FISH FINGER</h4></div></div>
-                    <h3 class="menu-subcategory-title">VEGETARIAN</h3>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">PERI PERI MOZZARELLA CHEESE FINGER</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CHEESE CORN CROQUETTES</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">GARLIC BREAD (With or Without Cheese)</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">LOADED CHEESY FRIES</h4></div></div>
+        <!-- STANDARDIZED CTA SECTION -->
+        <section class="cta-section">
+            <div class="container fade-in">
+                <h2>Reserve Your Table</h2>
+                <p>Join us at Jackson Diner for a memorable dining experience. Contact us to book your table or for any inquiries.</p>
+                <div class="cta-actions">
+                    <a href="tel:+919264197986" class="button-outline">Call for Reservation</a>
+                    <a href="/contact.html" class="button">Contact Us</a>
                 </div>
             </div>
-            
-            <!-- Column 2 -->
-            <div>
-                 <div class="menu-section">
-                    <h2 class="menu-category-title">Soups & Salads</h2>
-                    <h3 class="menu-subcategory-title">JD’S HOT N REFRESHING SOUPS (CHICKEN / VEG)</h3>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CREAM OF TOMATO</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CREAM OF MUSHROOM</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CREAM OF CHICKEN</h4></div></div>
-                    <h3 class="menu-subcategory-title">JD’S SPECIALITY SALADS (CHICKEN / VEG)</h3>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CRISPY NOODLES SALAD</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">ASIAN SPICED WARM SALAD</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CLASSIC CAESAR SALAD</h4></div></div>
-                </div>
-                
-                <div class="menu-section">
-                    <h2 class="menu-category-title">Sandwiches</h2>
-                    <h3 class="menu-subcategory-title">JD’S SPECIALITY SANDWICHES</h3>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">KING CLUB SANDWICH (NON-VEG)</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CHICKEN TIKKA SANDWICH</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">QUEEN CLUB SANDWICH (VEG)</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">PANEER TIKKA SANDWICH</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">MUSHROOM & SPINACH SANDWICH</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">COLESLAW SANDWICH</h4></div></div>
-                    <p class="menu-note">*Choice of White or Brown Bread. All Sandwiches are accompanied with house dip & fries.</p>
-                </div>
-
-                <div class="menu-section">
-                    <h2 class="menu-category-title">Pizza & Pasta</h2>
-                    <h3 class="menu-subcategory-title">THIN CRUST PIZZATARIAN</h3>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">BBQ CHICKEN</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">TANDOORI CHICKEN TIKKA</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">TANDOORI PANEER TIKKA</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">FARM HOUSE</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">LA MARGHERITA</h4></div></div>
-                    <h3 class="menu-subcategory-title">PASTA ITALIANO</h3>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">POLLO CON FUNGI (CHICKEN)</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">BOLOGNESE (MUTTON)</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">ALFREDO (VEG)</h4></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CLASSIC ARRABIATA (VEG)</h4></div></div>
-                </div>
-            </div>
-
-            <section class="menu-parallax" style="background-image: url('assets/images/jpg/jackson-diner-ambience.jpg');"></section>
-
-            <!-- Spanning the full width for the final section -->
-            <div style="grid-column: 1 / -1;">
-                <div class="menu-section">
-                    <h2 class="menu-category-title">Desserts</h2>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">CHOCOLICIOUS SIZZLING BROWNIE</h4><p class="item-description">With or Without Ice Cream</p></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">ICE CREAM FROM THE TUB</h4><p class="item-description">Ask your server for available flavours</p></div></div>
-                    <div class="menu-item"><div class="item-details"><h4 class="item-name">TUTTI FRUTTI</h4><p class="item-description">1 Scoop / 2 Scoops</p></div></div>
-                </div>
-            </div>
-        </div>
+        </section>
 
     </main>
-    
-    <footer class="main-footer">
-       <div class="container">
-           <div class="footer-bottom">
-               <p>&copy; <script>document.write(new Date().getFullYear())</script> Surya Hotel, All Rights Reserved.</p>
-           </div>
-       </div>
+
+    <!-- STANDARDIZED FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>SURYA PLAZA HOTEL</h4>
+                    <p>Opposite Ray Bahadur Building,<br>J.N.Roy Road, Sahibganj – 816109.<br>Jharkhand. India.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/gallery.html">Gallery</a></li>
+                        <li><a href="/attractions.html">Local Attractions</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+919264197986">P: +91 92641 97986</a></li>
+                        <li><a href="mailto:sbg.suryaplaza@gmail.com">E: sbg.suryaplaza@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Policies</h4>
+                     <ul>
+                        <li><a href="/terms.html">Terms & Conditions</a></li>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/cancellation-policy.html">Cancellation Policy</a></li>
+                     </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Surya Plaza Hotel. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
 </body>

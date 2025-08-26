@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jackson Diner by Moti Mahal | Surya Plaza Hotel, Sahibganj</title>
     <meta name="description" content="Discover Jackson Diner by Moti Mahal at Surya Plaza Hotel, offering a fusion of traditional and modern Indian flavors in a vibrant, casual setting.">
     
-    <title>Jackson Diner by Moti Mahal | Surya Plaza Hotel, Sahibganj</title>
-    
-    <link rel="stylesheet" href="assets/css/main.css">
-    <script src="assets/js/main.js" defer></script>
+    <!-- These links should point to the SAME files as your homepage -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
 
-    <header class="main-header">
-        <!-- The header content is identical to other pages for consistency -->
-        <div class="header-container">
-            <div class="logo">
-                <a href="/">SURYA PLAZA</a>
-            </div>
-            <nav class="main-nav">
+    <!-- STANDARDIZED HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">SURYA PLAZA</a>
+            <nav class="site-nav">
                 <ul>
+                    <li class="mobile-only-booking"><a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="button">Book Now</a></li>
                     <li><a href="/rooms.html">Rooms</a></li>
                     <li><a href="/dining.html">Restaurants</a></li>
                     <li><a href="/events.html">Events</a></li>
@@ -28,133 +27,137 @@
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <div class="header-controls">
-                <div class="theme-switcher">
-                    <button id="theme-toggle" title="Change theme" aria-label="Change theme">
-                        <!-- SVG Icons -->
-                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.591a.75.75 0 11-1.06-1.06l1.591-1.591a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75-.75zM17.834 18.894a.75.75 0 01-1.06 0l-1.591-1.591a.75.75 0 111.06-1.06l1.591 1.591a.75.75 0 010 1.06zM12 21.75a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0V21a.75.75 0 01-.75-.75zM5.106 17.834a.75.75 0 010-1.06l1.591-1.591a.75.75 0 011.06 1.06l-1.591 1.591a.75.75 0 01-1.06 0zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 011.06 0l1.591 1.591a.75.75 0 01-1.06 1.06L6.106 6.166a.75.75 0 010-1.06z"/></svg>
-                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.472-.948.75.75 0 01.98.98A10.503 10.503 0 0112 21a10.5 10.5 0 01-10.5-10.5c0-4.368 2.667-8.112 6.46-9.774a.75.75 0 01.818.162z" clip-rule="evenodd" /></svg>
-                    </button>
-                </div>
-                <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Room</a>
-                <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu">
-                    <span></span><span></span><span></span>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="button desktop-only-booking">Book Now</a>
+                <button class="menu-toggle" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <main style="padding-top: var(--header-height);">
+    <main>
 
-        <!-- Hero Section for Jackson Diner Page -->
-        <section class="hero hero-short">
-            <picture class="hero-background">
-                <source srcset="assets/images/webp/jackson-diner-hero.webp" type="image/webp">
-                <img src="assets/images/jpg/jackson-diner-hero.jpg" alt="Vibrant and modern interior of Jackson Diner">
-            </picture>
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
+        <!-- CONSISTENT HERO SECTION -->
+        <section class="hero-section hero-short" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/restaurants/Jackson Diner Hero.jpg');">
+            <div class="container fade-in">
                 <h1>Jackson Diner by Moti Mahal</h1>
-                <p>A Fusion of Traditional & Modern Flavors</p>
+                <p>A Contemporary Fusion of Flavors</p>
+            </div>
+        </section>
+
+        <!-- INTRODUCTION SECTION -->
+        <section class="restaurant-intro-section">
+            <div class="container">
+                <div class="section-title fade-in">
+                    <h2>A Modern Culinary Experience</h2>
+                    <p>Jackson Diner offers a unique blend of classic Indian recipes presented with a contemporary touch. Building on the renowned Moti Mahal legacy, this restaurant provides a vibrant ambiance and a diverse menu that caters to all palates, perfect for a casual yet memorable meal.</p>
+                </div>
+                <div class="commitment-grid grid-stagger">
+                    <div class="commitment-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5a7.5 7.5 0 00-7.5 7.5c0 8.33 7.5 11.67 7.5 11.67s7.5-3.34 7.5-11.67A7.5 7.5 0 0012 2.5z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                        <h4>Authentic Heritage</h4>
+                        <p>Honoring the Moti Mahal legacy with authentic tandoori specialties and signature curries.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.25 10.5a8.25 8.25 0 11-16.5 0 8.25 8.25 0 0116.5 0z"/><path d="M12 12.75a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"/></svg>
+                        <h4>Contemporary Flavors</h4>
+                        <p>A perfect fusion of classic Indian recipes presented with a modern, approachable touch.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+                        <h4>Vibrant Ambiance</h4>
+                        <p>A lively and inviting atmosphere that reflects the warm, welcoming essence of Indian hospitality.</p>
+                    </div>
+                    <div class="commitment-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.25c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z"/><path d="M12 12.75a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z"/><path d="M12 17.25c2.49 0 4.5-2.01 4.5-4.5s-2.01-4.5-4.5-4.5-4.5 2.01-4.5 4.5 2.01 4.5 4.5 4.5z"/></svg>
+                        <h4>Accessible Dining</h4>
+                        <p>Offering a balance of high-quality food and service at reasonable prices for an enjoyable experience.</p>
+                    </div>
+                </div>
             </div>
         </section>
         
-        <!-- Introduction & Features Section -->
-        <section class="restaurant-intro-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>A Contemporary Culinary Experience</h2>
-                    <p>Jackson Diner by Moti Mahal of India offers a unique blend of classic Indian recipes with a contemporary touch. As part of the renowned Moti Mahal legacy, it stands out with a vibrant ambience and a diverse menu that caters to all palates.</p>
-                </div>
-                <div class="key-features-grid">
-                    <div class="feature-card">
-                        <h3>Authentic North Indian Cuisine</h3>
-                        <p>Honoring the Moti Mahal legacy with authentic butter chicken and tandoori specialties.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Fusion of Flavors</h3>
-                        <p>A perfect blend of classic Indian recipes presented with a contemporary, modern touch.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h3>Vibrant Ambience</h3>
-                        <p>A lively, inviting atmosphere that reflects the warm essence of Indian hospitality.</p>
-                    </div>
-                     <div class="feature-card">
-                        <h3>Affordable Fine Dining</h3>
-                        <p>Offering a balance of high-quality dining at reasonable prices for a memorable experience.</p>
-                    </div>
-                </div>
+        <!-- VISUAL BREAK SECTION -->
+        <section class="visual-break-section" style="background-image: url('assets/images/restaurants/Jackson Diner By Moti Mahal.jpg');">
+            <div class="container fade-in">
+                <h2>Where Good Food Meets Good Times</h2>
             </div>
         </section>
 
-        <!-- Top Dishes Section -->
-        <section class="top-dishes-section">
+        <!-- SIGNATURE DISHES SECTION -->
+        <section class="signature-dishes-section">
             <div class="container">
-                <div class="section-title">
-                    <h2>Signature Dishes from the Moti Mahal Legacy</h2>
+                <div class="section-title fade-in">
+                    <h2>From the Moti Mahal Legacy</h2>
                     <p>Jackson Diner proudly serves a variety of iconic North Indian dishes, a testament to its rich culinary heritage.</p>
                 </div>
-                <div class="top-dishes-list">
-                    <div class="dish-item">
+                <div class="dishes-grid">
+                    <div class="dish-card fade-in">
                         <h3>Butter Chicken (Murgh Makhani)</h3>
-                        <p>This signature dish features tender pieces of tandoori chicken simmered in a creamy, tomato-based gravy.</p>
+                        <p>The globally renowned signature dish featuring tender tandoori chicken simmered in a creamy, tomato-based gravy.</p>
                     </div>
-                    <div class="dish-item">
+                    <div class="dish-card fade-in">
                         <h3>Tandoori Chicken</h3>
-                        <p>A classic preparation where chicken is marinated in yogurt and spices, then cooked in a tandoor for a smoky flavor.</p>
+                        <p>A classic preparation where chicken is marinated in yogurt and spices, then cooked in a tandoor for a smoky, succulent flavor.</p>
                     </div>
-                    <div class="dish-item">
+                    <div class="dish-card fade-in">
                         <h3>Dal Makhani</h3>
                         <p>A hearty lentil dish made from black lentils and kidney beans, slow-cooked with butter and cream to achieve a rich, velvety texture.</p>
                     </div>
-                     <div class="dish-item">
+                    <div class="dish-card fade-in">
                         <h3>The Original Butter Paneer</h3>
-                        <p>The iconic recipe featuring cottage cheese cooked in a tomato gravy and finished with cream and butter.</p>
+                        <p>The iconic recipe featuring cottage cheese cooked in a rich tomato gravy, finished with cream and butter.</p>
                     </div>
                 </div>
-                <div class="section-cta">
-                    <a href="/jackson-diner-menu.html" class="btn-primary">View Full Menu</a>
+                 <div class="section-cta fade-in">
+                    <a href="/jackson-diner-menu.html" class="button-outline">View Full Menu</a>
                 </div>
             </div>
         </section>
 
-        <!-- Contact CTA Section -->
-        <section class="contact-cta">
-            <div class="container">
-                <h2>Table Reservations & Inquiries</h2>
-                <p>Contact us directly to book your table for a memorable dining experience.</p>
-                <div class="contact-methods">
-                    <a href="tel:+919264197987" class="btn-secondary">Call Us</a>
-                    <a href="mailto:mmttsahibganj@gmail.com" class="btn-secondary">Email Us</a>
-                    <a href="https://wa.me/919264197987" target="_blank" rel="noopener noreferrer" class="btn-secondary">WhatsApp</a>
+        <!-- STANDARDIZED CTA SECTION -->
+        <section class="cta-section">
+            <div class="container fade-in">
+                <h2>Reserve Your Table</h2>
+                <p>Join us at Jackson Diner for a memorable dining experience. Contact us to book your table or for any inquiries.</p>
+                <div class="cta-actions">
+                    <a href="tel:+919264197986" class="button-outline">Call for Reservation</a>
+                    <a href="/contact.html" class="button">Contact Us</a>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="main-footer">
-        <!-- This footer is unchanged and correct. -->
+    <!-- STANDARDIZED FOOTER -->
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                 <div class="footer-column" id="footer-about">
+                <div class="footer-column">
                     <h4>SURYA PLAZA HOTEL</h4>
                     <p>Opposite Ray Bahadur Building,<br>J.N.Roy Road, Sahibganj – 816109.<br>Jharkhand. India.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>Quick Links</h4>
+                    <h4>Navigate</h4>
                     <ul>
-                        <li><a href="/rooms.html">Rooms & Suites</a></li>
-                        <li><a href="/dining.html">Restaurants</a></li>
-                        <li><a href="/events.html">Events</a></li>
+                        <li><a href="/about.html">About Us</a></li>
                         <li><a href="/gallery.html">Gallery</a></li>
+                        <li><a href="/attractions.html">Local Attractions</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="tel:+919264197987"><strong>Room Booking</strong><br>+91 92641 97987</a></li>
-                        <li style="margin-top: 1rem;"><a href="tel:+919264197987"><strong>Table Booking</strong><br>+91 92641 97987</a></li>
+                        <li><a href="tel:+919264197986">P: +91 92641 97986</a></li>
+                        <li><a href="mailto:sbg.suryaplaza@gmail.com">E: sbg.suryaplaza@gmail.com</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -162,12 +165,12 @@
                      <ul>
                         <li><a href="/terms.html">Terms & Conditions</a></li>
                         <li><a href="/privacy.html">Privacy Policy</a></li>
-                        <li><a href="/cancellation.html">Cancellation Policy</a></li>
-                    </ul>
+                        <li><a href="/cancellation-policy.html">Cancellation Policy</a></li>
+                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> Surya Hotel, All Rights Reserved.</p>
+                <p>&copy; 2025 Surya Plaza Hotel. All Rights Reserved.</p>
             </div>
         </div>
     </footer>

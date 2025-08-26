@@ -3,116 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Enjoy the convenience of our In-Room Dining service, offering a curated selection of signature dishes from our renowned restaurants.">
-    
     <title>In-Room Dining | Surya Plaza Hotel, Sahibganj</title>
+    <meta name="description" content="Enjoy the convenience of our 24/7 In-Room Dining service, offering a curated selection of signature dishes from our renowned restaurants.">
     
-    <link rel="stylesheet" href="assets/css/main.css">
-    <script src="assets/js/main.js" defer></script>
-    
-    <!-- This self-contained style block contains all necessary improvements and fixes for this page -->
-    <style>
-        /* Rule 1: Fix for the main header overlap on all internal pages */
-        main {
-            padding-top: var(--header-height, 5rem);
-        }
-
-        /* Rule 2: Layout for the new two-column curated menu */
-        .curated-menu-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-l, 4rem);
-        }
-
-        .menu-column h3 {
-            font-family: var(--font-primary, 'Cormorant Garamond', serif);
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: var(--space-m, 2rem);
-            padding-bottom: var(--space-s, 1rem);
-            border-bottom: 1px solid var(--color-border, #eAEAEA);
-        }
-        
-        .menu-column h4 {
-            font-weight: 500;
-            color: var(--color-text-secondary, #555555);
-            font-size: 1.2rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Rule 3: Prominent "How to Order" callout box */
-        .order-info-box {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: var(--space-m, 2rem);
-            border: 1px solid var(--color-border, #eAEAEA);
-            background-color: var(--color-surface, #f8f8f8);
-            border-radius: var(--border-radius, 6px);
-            text-align: center;
-        }
-        .order-info-box h2 {
-            font-family: var(--font-primary, 'Cormorant Garamond', serif);
-            font-size: 2.2rem;
-            margin-top: 0;
-        }
-        .order-info-box .dial-instruction {
-            font-size: 1.5rem;
-            font-weight: 500;
-        }
-        .order-info-box .dial-instruction span {
-            color: var(--color-primary, #8a7458);
-            font-weight: 600;
-        }
-
-        /* Rule 4: Guaranteed styling for the final CTA section */
-        .contact-cta {
-            background-color: #8a7458; /* Muted Gold/Brown */
-            color: white;
-        }
-        .contact-cta h2, .contact-cta p {
-            color: white;
-        }
-        .contact-cta .contact-methods {
-            display: flex; justify-content: center; flex-wrap: wrap;
-            gap: 1rem; margin-top: 2rem;
-        }
-        .contact-cta .btn-secondary {
-            color: #ffffff !important;
-            border-color: rgba(255, 255, 255, 0.7) !important;
-            background-color: transparent !important;
-        }
-        .contact-cta .btn-secondary:hover {
-            color: #8a7458 !important;
-            background-color: #ffffff !important;
-            border-color: #ffffff !important;
-        }
-
-        /* Rule 5: Responsive adjustments for mobile */
-        @media (max-width: 992px) {
-            .curated-menu-grid {
-                grid-template-columns: 1fr; /* Stack columns on mobile */
-                gap: 0;
-            }
-            .menu-column {
-                margin-bottom: var(--space-l, 4rem);
-            }
-            .contact-cta .contact-methods {
-                flex-direction: column; align-items: center;
-            }
-        }
-    </style>
+    <!-- These links should point to the SAME files as your homepage -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
 
-    <header class="main-header">
-        <!-- The header content is identical to other pages for consistency -->
-        <div class="header-container">
-            <div class="logo">
-                <a href="/">SURYA PLAZA</a>
-            </div>
-            <nav class="main-nav">
+    <!-- STANDARDIZED HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo">SURYA PLAZA</a>
+            <nav class="site-nav">
                 <ul>
+                    <li class="mobile-only-booking"><a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="button">Book Now</a></li>
                     <li><a href="/rooms.html">Rooms</a></li>
                     <li><a href="/dining.html">Restaurants</a></li>
                     <li><a href="/events.html">Events</a></li>
@@ -121,17 +27,16 @@
                     <li><a href="/contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <div class="header-controls">
-                <div class="theme-switcher">
-                    <button id="theme-toggle" title="Change theme" aria-label="Change theme">
-                        <!-- SVG Icons -->
-                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.591a.75.75 0 11-1.06-1.06l1.591-1.591a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75-.75zM17.834 18.894a.75.75 0 01-1.06 0l-1.591-1.591a.75.75 0 111.06-1.06l1.591 1.591a.75.75 0 010 1.06zM12 21.75a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0V21a.75.75 0 01-.75-.75zM5.106 17.834a.75.75 0 010-1.06l1.591-1.591a.75.75 0 011.06 1.06l-1.591 1.591a.75.75 0 01-1.06 0zM3 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3.75A.75.75 0 013 12zM6.106 5.106a.75.75 0 011.06 0l1.591 1.591a.75.75 0 01-1.06 1.06L6.106 6.166a.75.75 0 010-1.06z"/></svg>
-                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.472-.948.75.75 0 01.98.98A10.503 10.503 0 0112 21a10.5 10.5 0 01-10.5-10.5c0-4.368 2.667-8.112 6.46-9.774a.75.75 0 01.818.162z" clip-rule="evenodd" /></svg>
-                    </button>
-                </div>
-                <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">Book Room</a>
-                <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu">
-                    <span></span><span></span><span></span>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="https://bookings.suryaplazahotels.com/" target="_blank" rel="noopener noreferrer" class="button desktop-only-booking">Book Now</a>
+                <button class="menu-toggle" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
@@ -139,120 +44,117 @@
 
     <main>
 
-        <!-- Hero Section for In-Room Dining Page -->
-        <section class="hero hero-short">
-            <picture class="hero-background">
-                <source srcset="assets/images/webp/in-room-dining-hero.webp" type="image/webp">
-                <img src="assets/images/jpg/in-room-dining-hero.jpg" alt="A delicious meal arranged on a tray in a hotel room">
-            </picture>
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
+        <!-- CONSISTENT HERO SECTION -->
+        <section class="hero-section hero-short" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/rooms/family-apartment.jpg');">
+            <div class="container fade-in">
                 <h1>In-Room Dining</h1>
                 <p>Curated Flavors, Delivered to Your Door</p>
             </div>
         </section>
-        
-        <!-- Introduction Section -->
+
+        <!-- INTRODUCTION SECTION -->
         <section class="restaurant-intro-section">
             <div class="container">
-                <div class="section-title">
-                    <h2>The Best of Our Kitchens</h2>
-                    <p>For your convenience and comfort, our In-Room Dining service offers a curated selection of signature dishes from our renowned restaurants. Enjoy delectable choices from the comfort of your room, whenever the fancy strikes.</p>
+                <div class="section-title fade-in">
+                    <h2>The Best of Our Kitchens, 24/7</h2>
+                    <p>For your convenience and comfort, our In-Room Dining service offers a curated selection of signature dishes from our renowned restaurants. Enjoy delectable choices in the privacy of your room, whenever you wish.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Curated Menu Section -->
-        <section class="top-dishes-section">
+        <!-- HOW TO ORDER SECTION -->
+        <section class="order-info-section">
             <div class="container">
-                <div class="section-title">
+                 <div class="order-info-box fade-in">
+                    <h2>How to Order</h2>
+                    <p class="dial-instruction">Please Dial <span>"9"</span> from Your Room's Telephone</p>
+                    <p>Our team is available 24 hours a day to take your order and assist with any dietary requirements.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURATED MENU SECTION -->
+        <section class="signature-dishes-section" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-title fade-in">
                     <h2>Chef's Recommendations</h2>
                     <p>A selection of our most popular dishes available for in-room delivery.</p>
                 </div>
                 
                 <div class="curated-menu-grid">
                     <!-- Column 1: Moti Mahal -->
-                    <div class="menu-column">
+                    <div class="menu-column fade-in">
                         <h3>From Moti Mahal</h3>
-                        
-                        <h4>Vegetarian</h4>
-                        <div class="dish-item"><h3>The Original Butter Paneer</h3><p>The iconic recipe featuring cottage cheese cooked in a tomato gravy and finished with cream and butter.</p></div>
-                        <div class="dish-item"><h3>Dal Makhani</h3><p>A hearty lentil dish, slow-cooked with butter and cream to achieve a rich, velvety texture.</p></div>
-                        <div class="dish-item"><h3>Kadhai Paneer</h3><p>Cottage cheese cooked with onion, bell peppers, and tomato in a traditional Indian wok.</p></div>
-                        <div class="dish-item"><h3>Pindi Chana Masala</h3><p>White chickpeas cooked in a carom-flavored onion and tomato gravy.</p></div>
-                        
-                        <h4>Non-Vegetarian</h4>
-                        <div class="dish-item"><h3>Butter Chicken (Murgh Makhani)</h3><p>The signature dish of tender tandoori chicken simmered in a creamy, tomato-based gravy.</p></div>
-                        <div class="dish-item"><h3>Tandoori Chicken</h3><p>A classic preparation where chicken is marinated and cooked in a tandoor for a smoky flavor.</p></div>
-                        <div class="dish-item"><h3>Mutton Rogan Josh</h3><p>A flavorful curry with tender mutton pieces cooked in a rich, aromatic gravy.</p></div>
+                        <div class="dish-card">
+                            <h3>Butter Chicken (Murgh Makhani)</h3>
+                            <p>The signature dish of tender tandoori chicken simmered in a creamy, tomato-based gravy.</p>
+                        </div>
+                        <div class="dish-card">
+                            <h3>Dal Makhani</h3>
+                            <p>A hearty lentil dish, slow-cooked with butter and cream to achieve a rich, velvety texture.</p>
+                        </div>
+                         <div class="dish-card">
+                            <h3>The Original Butter Paneer</h3>
+                            <p>The iconic recipe featuring cottage cheese cooked in a rich tomato gravy, finished with cream and butter.</p>
+                        </div>
                     </div>
 
                     <!-- Column 2: Jackson Diner -->
-                    <div class="menu-column">
+                    <div class="menu-column fade-in">
                         <h3>From Jackson Diner</h3>
-                        
-                        <h4>Vegetarian</h4>
-                        <div class="dish-item"><h3>Pasta Alfredo</h3><p>Pasta with exotic vegetables tossed in a creamy Alfredo sauce, served with garlic bread.</p></div>
-                        <div class="dish-item"><h3>Crunchy Paneer Burger</h3><p>A crispy fried cottage cheese patty with grilled onion, tomatoes, and cheese, served with fries.</p></div>
-                        <div class="dish-item"><h3>Tandoori Paneer Tikka Pizza</h3><p>A thin-crust pizza topped with shredded paneer tikka and mozzarella cheese.</p></div>
-                        <div class="dish-item"><h3>Queen Club Sandwich</h3><p>A three-layer sandwich with coleslaw, onion, tomato, cucumber, and cheese.</p></div>
-
-                        <h4>Non-Vegetarian</h4>
-                        <div class="dish-item"><h3>Crunchy Chicken Burger</h3><p>A crispy fried chicken patty with caramelized onion, plum tomatoes, lettuce, and cheese, served with fries.</p></div>
-                        <div class="dish-item"><h3>Chicken Tikka Roll</h3><p>Tandoor-roasted shredded chicken tikka with onion & tri-peppers, stuffed in a soft roomali roti.</p></div>
-                        <div class="dish-item"><h3>King Club Sandwich</h3><p>A three-layer sandwich with grilled chicken, chicken ham, fried egg, and cheese.</p></div>
+                        <div class="dish-card">
+                            <h3>Crunchy Chicken Burger</h3>
+                            <p>A crispy fried chicken patty with caramelized onion, plum tomatoes, lettuce, and cheese, served with fries.</p>
+                        </div>
+                        <div class="dish-card">
+                            <h3>Pasta Alfredo (Veg)</h3>
+                            <p>Pasta with exotic vegetables tossed in a creamy Alfredo sauce, served with garlic bread.</p>
+                        </div>
+                         <div class="dish-card">
+                            <h3>King Club Sandwich (Non-Veg)</h3>
+                            <p>A three-layer sandwich with grilled chicken, chicken ham, a fried egg, and cheese, served with fries.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- How to Order Section -->
-        <section style="padding-top: 0; padding-bottom: 4rem;">
-            <div class="container">
-                 <div class="order-info-box">
-                    <h2>How to Order</h2>
-                    <p class="dial-instruction">Please Dial <span>"9"</span> from Your Room's Telephone</p>
-                    <p style="margin-top: 1rem; color: var(--color-text-secondary);">Our team is available 24/7 to take your order and assist with any dietary requirements.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Full Menu Links -->
-        <section class="contact-cta">
-            <div class="container">
+        <!-- FULL MENU LINKS CTA -->
+        <section class="cta-section">
+            <div class="container fade-in">
                 <h2>Explore More Options</h2>
                 <p>For our complete culinary offerings, you are welcome to browse the full menus of our restaurants.</p>
-                <div class="contact-methods">
-                    <a href="/moti-mahal-menu.html" class="btn-secondary">View Moti Mahal Menu</a>
-                    <a href="/jackson-diner-menu.html" class="btn-secondary">View Jackson Diner Menu</a>
+                <div class="cta-actions">
+                    <a href="/moti-mahal-menu.html" class="button-outline">View Moti Mahal Menu</a>
+                    <a href="/jackson-diner-menu.html" class="button-outline">View Jackson Diner Menu</a>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="main-footer">
-        <!-- This footer is unchanged and correct. -->
+    <!-- STANDARDIZED FOOTER -->
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                 <div class="footer-column" id="footer-about">
+                <div class="footer-column">
                     <h4>SURYA PLAZA HOTEL</h4>
                     <p>Opposite Ray Bahadur Building,<br>J.N.Roy Road, Sahibganj – 816109.<br>Jharkhand. India.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>Quick Links</h4>
+                    <h4>Navigate</h4>
                     <ul>
-                        <li><a href="/rooms.html">Rooms & Suites</a></li>
-                        <li><a href="/dining.html">Restaurants</a></li>
-                        <li><a href="/events.html">Events</a></li>
+                        <li><a href="/about.html">About Us</a></li>
                         <li><a href="/gallery.html">Gallery</a></li>
+                        <li><a href="/attractions.html">Local Attractions</a></li>
+                        <li><a href="/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="tel:+919264197987"><strong>Room Booking</strong><br>+91 9264197987</a></li>
-                        <li style="margin-top: 1rem;"><a href="tel:+919264197987"><strong>Table Booking</strong><br>+91 9264197987</a></li>
+                        <li><a href="tel:+919264197986">P: +91 92641 97986</a></li>
+                        <li><a href="mailto:sbg.suryaplaza@gmail.com">E: sbg.suryaplaza@gmail.com</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -260,12 +162,12 @@
                      <ul>
                         <li><a href="/terms.html">Terms & Conditions</a></li>
                         <li><a href="/privacy.html">Privacy Policy</a></li>
-                        <li><a href="/cancellation.html">Cancellation Policy</a></li>
-                    </ul>
+                        <li><a href="/cancellation-policy.html">Cancellation Policy</a></li>
+                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> Surya Hotel, All Rights Reserved.</p>
+                <p>&copy; 2025 Surya Plaza Hotel. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
